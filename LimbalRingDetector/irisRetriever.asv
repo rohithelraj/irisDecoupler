@@ -32,11 +32,11 @@ function iris = irisRetriever(edgeInput,pupil)
                 end
             elseif ((centroid(2) < co_x)&&(centroid(1) < co_y))%|E|
                 
-            elseif ((centroid(2) > co_x)&&(centroid(1) > co_y))%|F|
+            elseif ((centroid(2) > co_x)&&(centroid(1) > co_y))
                 
-            elseif ((centroid(2) < co_x)&&(centroid(1) > co_y))%|G|
+            elseif ((centroid(2) < co_x)&&(centroid(1) > co_y))
                 
-            elseif ((centroid(2) > co_x)&&(centroid(1) < co_y))%|H|
+            elseif ((centroid(2) > co_x)&&(centroid(1) < co_y))
                 
             else
                 disp('The eye input is invalid. Failed in irisRetiever.'); 
