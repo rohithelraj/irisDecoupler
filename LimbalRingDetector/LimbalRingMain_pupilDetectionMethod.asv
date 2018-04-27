@@ -8,8 +8,8 @@ img_gamm = igamm(img, 'sRGB');%gamma correction.
 if (pupilFlag == 1)
      disp('Pupil Detected.'); 
      %Displaying detected pupil
-     figure,imshow(img);
-     outputBlob.plot_box; %For blob boxes.
+     %figure,imshow(img);
+     %outputBlob.plot_box; For blob boxes.
      box_side = sqrt(outputBlob.bboxarea);
      result = outputBlob.bbox;
      hEllipse = imellipse(gca,[result(1) result(2) box_side box_side]);
@@ -18,12 +18,11 @@ if (pupilFlag == 1)
      [row,col]=find(binaryImage);
      PupilPixels = [row,col];
      img = (uint8(rgbImage)*255) + img;
-    
-     figure,imshow('SampleData\M623148 (V3).jpg');
+     %figure,imshow('SampleData\M623148 (V3).jpg');
      %RGB values of the detected pupil.
-     RGBpixels=impixel(img,col,row);
+     %RGBpixels=impixel(img,col,row);
      %Doing canny edge detection.
-     edged_canny_image = cannyEdgeDetector_forPupil(img);
+     
      
      else
     disp('The eye input is invalid.'); 
