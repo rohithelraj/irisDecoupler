@@ -15,11 +15,16 @@ function irisCoordinates = findIrisCoordinates(pupilPoint,centroid,radii_spatial
 %                 |
 %   |€|           |
 %                |a|            
-% For line cent.--> |€|
-% ((cent_x^2) + (X^2) + (2*cent_x*X) )+((cent_y^2) + (Y^2) + (2*cent_y*Y)) = (( D + radii_spatial)^2)
-% For line |E|--> |€|
-% ((x^2) + (X^2) + (2*x*X) )+((y^2) + (Y^2) + (2*y*Y)) = (radii_spatial^2)
-% Then both must be solved for, to find coordinates of |€|,|n|,|L|,|z|. 
+%Let v=(x1,y1)?(x0,y0). Normalize this to u=v/|v||.
 
+%The point along your line at a distance d from (x0,y0) is then (x0,y0)+du, 
+%if you want it in the direction of (x1,y1), or (x0,y0)?du, if you want it in 
+%the opposite direction. One advantage of doing the calculation this way is that 
+%you won't run into a problem with division by zero in the case that x0=x1. 
+line_vector = [(pupilPoint(1)-centroid(1)) (pupilPoint(2)-centroid(2))];
+normal = sqrt((line_vector(1)^2)+(line_vector(2)^2));
+line_vector_normal = [(line_vector(1)/normal) (line_vector(2)/normal)];
+line_vector_normal_D = radii_spatial * line_vector_normal;
+irisCoordinates = ceil(line_vector_normal_D + pupilPoint);
 end
 
