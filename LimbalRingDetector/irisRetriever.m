@@ -31,8 +31,10 @@ function iris = irisRetriever(edgeInput,pupil)
   iris = zeros(400,200);
   %centroid(1)-> Centroid(X)
   %centroid(2)-> Centroid(Y)
-  
+  pupil = transpose(pupil);
+  edgeInput = transpose(edgeInput);
   centroid = [201 99];
+  
   radii_spatial = 66;%Lateral distance between pupil and iris outer ring.
   for co_x = 1:400
     for co_y = 1:200
@@ -67,6 +69,7 @@ function iris = irisRetriever(edgeInput,pupil)
                 else%|D|
                     if(edgeInput((co_x-radii_spatial),co_y) == 1)
                         iris((co_x-radii_spatial),co_y) = 1;
+                        
                     elseif(edgeInput((co_x-radii_spatial+1),co_y) == 1)
                         iris((co_x-radii_spatial+1),co_y) = 1;
                     elseif(edgeInput((co_x-radii_spatial-1),co_y) == 1)
@@ -83,10 +86,13 @@ function iris = irisRetriever(edgeInput,pupil)
                 %prepended
                 irisCoordinates_prepended = findIrisCoordinates([co_x co_y],centroid,radii_spatial-1);
                 if(edgeInput(irisCoordinates_real) == 1)
+                    disp('Working G 1');
                     iris(irisCoordinates_real) = 1;
                 elseif(edgeInput(irisCoordinates_appended) == 1)
+                    disp('Working G 2');
                     iris(irisCoordinates_appended) = 1;
                 elseif(edgeInput(irisCoordinates_prepended) == 1)
+                    disp('Working G 3');
                     iris(irisCoordinates_prepended) = 1;
                 end  
             elseif ((centroid(1) > co_x)&&(centroid(2) > co_y))%|H|cautious. Threshold point (271,54).
@@ -97,10 +103,13 @@ function iris = irisRetriever(edgeInput,pupil)
                 %prepended
                 irisCoordinates_prepended = findIrisCoordinates([co_x co_y],centroid,radii_spatial-1);
                 if(edgeInput(irisCoordinates_real) == 1)
+                    disp('Working H 1');
                     iris(irisCoordinates_real) = 1;
                 elseif(edgeInput(irisCoordinates_appended) == 1)
+                    disp('Working H 2');
                     iris(irisCoordinates_appended) = 1;
                 elseif(edgeInput(irisCoordinates_prepended) == 1)
+                    disp('Working H 3');
                     iris(irisCoordinates_prepended) = 1;
                 end                 
                 
@@ -112,10 +121,13 @@ function iris = irisRetriever(edgeInput,pupil)
                 %prepended
                 irisCoordinates_prepended = findIrisCoordinates([co_x co_y],centroid,radii_spatial-1);    
                 if(edgeInput(irisCoordinates_real) == 1)
+                    disp('Working F 1');
                     iris(irisCoordinates_real) = 1;
                 elseif(edgeInput(irisCoordinates_appended) == 1)
+                    disp('Working F 2');
                     iris(irisCoordinates_appended) = 1;
                 elseif(edgeInput(irisCoordinates_prepended) == 1)
+                    disp('Working F 3');
                     iris(irisCoordinates_prepended) = 1;
                 end                 
             elseif ((centroid(1) > co_x)&&(centroid(2) < co_y))%|E|
@@ -126,10 +138,13 @@ function iris = irisRetriever(edgeInput,pupil)
                 %prepended
                 irisCoordinates_prepended = findIrisCoordinates([co_x co_y],centroid,radii_spatial-1); 
                 if(edgeInput(irisCoordinates_real) == 1)
+                    disp('Working E 1'); 
                     iris(irisCoordinates_real) = 1;
                 elseif(edgeInput(irisCoordinates_appended) == 1)
+                     disp('Working E 2');
                     iris(irisCoordinates_appended) = 1;
                 elseif(edgeInput(irisCoordinates_prepended) == 1)
+                    disp('Working E 3');
                     iris(irisCoordinates_prepended) = 1;
                 end                 
             else
