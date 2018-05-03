@@ -82,6 +82,13 @@ function iris = irisRetriever(edgeInput,pupil)
                 irisCoordinates_appended = findIrisCoordinates([co_x co_y],centroid,radii_spatial+1);
                 %prepended
                 irisCoordinates_prepended = findIrisCoordinates([co_x co_y],centroid,radii_spatial-1);
+                if(edgeInput(irisCoordinates_real) == 1)
+                    iris(irisCoordinates_real) = 1;
+                elseif(edgeInput(irisCoordinates_appended) == 1)
+                    iris(irisCoordinates_appended) = 1;
+                elseif(edgeInput(irisCoordinates_prepended) == 1)
+                    iris(irisCoordinates_prepended) = 1;
+                end  
             elseif ((centroid(1) > co_x)&&(centroid(2) > co_y))%|H|cautious. Threshold point (271,54).
                 %real
                 irisCoordinates_real = findIrisCoordinates([co_x co_y],centroid,radii_spatial);
@@ -89,6 +96,13 @@ function iris = irisRetriever(edgeInput,pupil)
                 irisCoordinates_appended = findIrisCoordinates([co_x co_y],centroid,radii_spatial+1);
                 %prepended
                 irisCoordinates_prepended = findIrisCoordinates([co_x co_y],centroid,radii_spatial-1);
+                if(edgeInput(irisCoordinates_real) == 1)
+                    iris(irisCoordinates_real) = 1;
+                elseif(edgeInput(irisCoordinates_appended) == 1)
+                    iris(irisCoordinates_appended) = 1;
+                elseif(edgeInput(irisCoordinates_prepended) == 1)
+                    iris(irisCoordinates_prepended) = 1;
+                end                 
                 
             elseif ((centroid(1) < co_x)&&(centroid(2) > co_y))%|F|cautious. Threshold point (120,65).
                 %real
@@ -96,14 +110,28 @@ function iris = irisRetriever(edgeInput,pupil)
                 %appended
                 irisCoordinates_appended = findIrisCoordinates([co_x co_y],centroid,radii_spatial+1);
                 %prepended
-                irisCoordinates_prepended = findIrisCoordinates([co_x co_y],centroid,radii_spatial-1);                
+                irisCoordinates_prepended = findIrisCoordinates([co_x co_y],centroid,radii_spatial-1);    
+                if(edgeInput(irisCoordinates_real) == 1)
+                    iris(irisCoordinates_real) = 1;
+                elseif(edgeInput(irisCoordinates_appended) == 1)
+                    iris(irisCoordinates_appended) = 1;
+                elseif(edgeInput(irisCoordinates_prepended) == 1)
+                    iris(irisCoordinates_prepended) = 1;
+                end                 
             elseif ((centroid(1) > co_x)&&(centroid(2) < co_y))%|E|
                 %real
                 irisCoordinates_real = findIrisCoordinates([co_x co_y],centroid,radii_spatial);
                 %appended
                 irisCoordinates_appended = findIrisCoordinates([co_x co_y],centroid,radii_spatial+1);
                 %prepended
-                irisCoordinates_prepended = findIrisCoordinates([co_x co_y],centroid,radii_spatial-1);                
+                irisCoordinates_prepended = findIrisCoordinates([co_x co_y],centroid,radii_spatial-1); 
+                if(edgeInput(irisCoordinates_real) == 1)
+                    iris(irisCoordinates_real) = 1;
+                elseif(edgeInput(irisCoordinates_appended) == 1)
+                    iris(irisCoordinates_appended) = 1;
+                elseif(edgeInput(irisCoordinates_prepended) == 1)
+                    iris(irisCoordinates_prepended) = 1;
+                end                 
             else
                 disp('The eye input is invalid. Failed in irisRetiever.'); 
             end
