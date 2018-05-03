@@ -13,19 +13,19 @@ function iris = irisRetriever(edgeInput,pupil)
 % (1,200)     (201,200)              (400,200)
 % Determining the outer rim of the iris.
 %                     |
-%                    |?|
-%    |L|         .    |             |?|
+%                    |ß|
+%    |L|         .    |             |z|
 %                 .   |
 %                 | . |
-%                ?|  .|
+%            theta|  .|
 %                 | . . .
-%--|?|-------------.-----.--------------|?|---
-%                   . . .
+%--|d|-------------.-----.--------------|r|---
+%     radii_spatial . . .
 %                     |
 %                     |
 %                     |
-%    |?|              |             |?|
-%                    |?|
+%    |€|              |             |n|
+%                    |a|
 %                     |
 
   iris = zeros(400,200);
@@ -33,23 +33,71 @@ function iris = irisRetriever(edgeInput,pupil)
   %centroid(2)-> Centroid(Y)
   
   centroid = [201 99];
+  radii_spatial = 66;%Lateral distance between pupil and iris outer ring.
   for co_x = 1:400
     for co_y = 1:200
-        if (pupil(co_y,co_x) == 1)
+        if (pupil(co_x,co_y) == 1)
             if (co_x == centroid(1))
                 if (co_y > centroid(2))%|A|
-                    
+                    if(edgeInput(co_x,(co_y+radii_spatial)) == 1)
+                        iris(co_x,(co_y+radii_spatial)) = 1;
+                    elseif(edgeInput(co_x,(co_y+radii_spatial+1)) == 1)
+                        iris(co_x,(co_y+radii_spatial+1)) = 1;
+                    elseif(edgeInput(co_x,(co_y+radii_spatial-1)) == 1)
+                        iris(co_x,(co_y+radii_spatial-1)) = 1;
+                    end
                 else%|B|
-                    
+                    if(edgeInput(co_x,(co_y-radii_spatial)) == 1)
+                        iris(co_x,(co_y-radii_spatial)) = 1;
+                    elseif(edgeInput(co_x,(co_y-radii_spatial+1)) == 1)
+                        iris(co_x,(co_y-radii_spatial+1)) = 1;
+                    elseif(edgeInput(co_x,(co_y-radii_spatial-1)) == 1)
+                        iris(co_x,(co_y-radii_spatial-1)) = 1;
+                    end
                 end
             elseif (co_y == centroid(2))
                 if (co_x > centroid(1))%|C|
-                    
+                    if(edgeInput((co_x+radii_spatial),co_y) == 1)
+                        iris((co_x+radii_spatial),co_y) = 1;
+                    elseif(edgeInput((co_x+radii_spatial+1),co_y) == 1)
+                        iris((co_x+radii_spatial+1),co_y) = 1;
+                    elseif(edgeInput((co_x+radii_spatial-1),co_y) == 1)
+                        iris((co_x+radii_spatial-1),co_y) = 1;
+                    end
                 else%|D|
-                    
+                    if(edgeInput((co_x-radii_spatial),co_y) == 1)
+                        iris((co_x-radii_spatial),co_y) = 1;
+                    elseif(edgeInput((co_x-radii_spatial+1),co_y) == 1)
+                        iris((co_x-radii_spatial+1),co_y) = 1;
+                    elseif(edgeInput((co_x-radii_spatial-1),co_y) == 1)
+                        iris((co_x-radii_spatial-1),co_y) = 1;
+                    end                    
                 end
+            %Eucledian Distance between two points (x,y) and (X,Y) is D.
+            % In case of points |E|,|F|,|G|,|H|.
+            % To find coordinates of |€|,|n|,|L|,|z|.
+            %               cent.
+            %                 |
+            %                 |
+            %                 |
+            %        |E|      |
+            %                |A|
+            %                 |
+            %                 |
+            %                 |
+            %                 |
+            %   |€|           |
+            %                |a|            
+            % For line cent.--> |€|
+            % ((cent_x^2) + (X^2) + (2*cent_x*X) )+((cent_y^2) + (Y^2) + (2*cent_y*Y)) = (( D + radii_spatial)^2)
+            % For line |E|--> |€|
+            % ((x^2) + (X^2) + (2*x*X) )+((y^2) + (Y^2) + (2*y*Y)) = (radii_spatial^2)
+            % Then both must be solved for, to find coordinates of |€|,|n|,|L|,|z|. 
+             
             elseif ((centroid(1) < co_x)&&(centroid(2) < co_y))%|G|
-                
+                %real
+                findIrisCoordinates();
+                %a
             elseif ((centroid(1) > co_x)&&(centroid(2) > co_y))%|H|cautious. Threshold point (271,54).
                 
             elseif ((centroid(1) < co_x)&&(centroid(2) > co_y))%|F|cautious. Threshold point (120,65).
