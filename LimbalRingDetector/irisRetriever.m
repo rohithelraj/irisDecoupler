@@ -13,19 +13,19 @@ function iris = irisRetriever(edgeInput,pupil)
 % (1,200)     (201,200)              (400,200)
 % Determining the outer rim of the iris.
 %                     |
-%                    |?|
-%    |?|         .    |             |?|
+%                    |ß|
+%    |L|         .    |             |z|
 %                 .   |
 %                 | . |
-%                ?|  .|
+%            theta|  .|
 %                 | . . .
-%--|?|-------------.-----.--------------|?|---
+%--|d|-------------.-----.--------------|r|---
 %                   . . .
 %                     |
 %                     |
 %                     |
-%    |?|              |             |?|
-%                    |?|
+%    |€|              |             |n|
+%                    |a|
 %                     |
 
   iris = zeros(400,200);
@@ -50,9 +50,9 @@ function iris = irisRetriever(edgeInput,pupil)
                 end
             elseif ((centroid(1) < co_x)&&(centroid(2) < co_y))%|G|
                 
-            elseif ((centroid(1) > co_x)&&(centroid(2) > co_y))%|H|
+            elseif ((centroid(1) > co_x)&&(centroid(2) > co_y))%|H|cautious. Threshold point (271,54).
                 
-            elseif ((centroid(1) < co_x)&&(centroid(2) > co_y))%|F|
+            elseif ((centroid(1) < co_x)&&(centroid(2) > co_y))%|F|cautious. Threshold point (120,65).
                 
             elseif ((centroid(1) > co_x)&&(centroid(2) < co_y))%|E|
                 

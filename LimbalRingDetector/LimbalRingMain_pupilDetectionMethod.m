@@ -22,8 +22,7 @@ if (pupilFlag == 1)
      %RGB values of the detected pupil.
      RGBpixels=impixel(img,col,row);
      %Doing canny edge detection.
-     edged_canny_image = cannyEdgeDetector_forPupil(img);
-     
+     edged_canny_image = cannyEdgeDetector_forPupil(img); 
  else
     disp('The eye input is invalid.'); 
 end
