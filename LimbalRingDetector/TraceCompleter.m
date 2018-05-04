@@ -1,7 +1,7 @@
 function tracedIris = TraceCompleter(iris)
 %TRACECOMPLETER Summary of this function goes here
 %   Detailed explanation goes here
-  
+  tracedIris = iris;
   for y = 1:200
     x_detect_flag_front = 0;
     x_detect_flag_topCircle = 0;
@@ -14,7 +14,7 @@ function tracedIris = TraceCompleter(iris)
                         x_detect_flag_front = 1;
                         if(i > 1)
                             for j = 1:(i-1)
-                                iris(y,x+j) = 1;
+                                tracedIris(y,x+j) = 1;
                                
                             end
                         end
@@ -43,7 +43,7 @@ function tracedIris = TraceCompleter(iris)
                                 delta = x - min_x;
                                 last_x = max_x - delta;
                                 for l = x: last_x
-                                    iris(y,l) = 1;
+                                    tracedIris(y,l) = 1;
                                     
                                 end     
                             end
@@ -67,7 +67,7 @@ function tracedIris = TraceCompleter(iris)
                                 delta = x - min_x;
                                 last_x = max_x + delta;
                                 for l = x: last_x
-                                    iris(y,l) = 1;
+                                    tracedIris(y,l) = 1;
                                     
                                 end     
                             end
@@ -90,7 +90,7 @@ function tracedIris = TraceCompleter(iris)
                         y_detect_flag_front = 1;
                         if(i > 1)
                             for j = 1:(i-1)
-                                iris(y+j,x) = 1;
+                                tracedIris(y+j,x) = 1;
                                 %disp('Tracing Worked');
                             end
                         end
@@ -101,6 +101,6 @@ function tracedIris = TraceCompleter(iris)
         end
     end    
   end
-  tracedIris = iris;
+  
 end
 
