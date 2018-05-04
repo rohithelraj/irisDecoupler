@@ -24,6 +24,9 @@ if (pupilFlag == 1)
      %Doing canny edge detection.
      edged_canny_image = cannyEdgeDetector_forPupil(img); 
      edged_pupil_image = cannyEdgeDetector_forPupil(uint8(rgbImage)); 
+     iris = irisRetriever(edged_canny_image,edged_pupil_image);
+     rgbImage_iris = cat(3, iris, iris, iris);
+     edged_canny_iris = cannyEdgeDetector_forPupil(uint8(rgbImage_iris));
  else
     disp('The eye input is invalid.'); 
 end
