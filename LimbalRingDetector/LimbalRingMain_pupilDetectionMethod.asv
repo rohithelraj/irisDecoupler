@@ -4,7 +4,7 @@ img_gamm = igamm(img, 'sRGB');%gamma correction.
 %Finding Pupil
 [all_blobs,pupil] = findPupil( img_gamm );
 %if pupil detected, the flag value will be 1.
-[outputBlob,pupilFlag] = blobNoiseReduction( all_blobs );
+[outputBlob,pupilFlag] = blobNoiseReduction( all_blobs, 3000, 950 );
 if (pupilFlag == 1)
      disp('Pupil Detected.'); 
      %Displaying detected pupil
@@ -27,11 +27,17 @@ if (pupilFlag == 1)
      iris = irisRetriever(edged_canny_image,edged_pupil_image);
      rgbImage_iris = cat(3, iris, iris, iris);
      edged_canny_iris = cannyEdgeDetector_forPupil(uint8(rgbImage_iris));
-     tracedIris2 = TraceCompleter(iris);
-     tracedIris2 = TraceCompleter(tracedIris1);
-     tracedIris2 = TraceCompleter(tracedIris1);
-     tracedIris3 = TraceCompleter(tracedIris2);
-     tracedIris4 = TraceCompleter(tracedIris3);
+     tracedIris = TraceCompleter(TraceCompleter(TraceCompleter(TraceCompleter(TraceCompleter(TraceCompleter(iris))))));
+     tracedIris_blobs = iblobs(tracedIris,'boundary');
+     [tracedIris_blobs_up,irisFlag] = blobNoiseReduction(tracedIris_blobs,16000,13000);
+     if(irisFlag == 1)
+        disp('Iris Detected.'); 
+        tracedIris_blobs_up.plot_box; %For blob boxes.
+        box_side_iris = sqrt(tracedIris_blobs_up.bboxarea);
+        result_iris = tracedIris_blobs_up.bbox;
+        hEllipse_iris = imellipse(gca,[result_iris(1) result_iris(2) box_side_iris box_side_iris]);
+        binaryImage_iris = hEllipse_iris.createMask();
+     end
  else
     disp('The eye input is invalid.'); 
 end

@@ -1,10 +1,10 @@
-img = iread('SampleData\No_LimbalRing\M134944 (V3)withFlecksNeviinhibitedWithWeakAmbientGradient.jpg');
+img = iread('SampleData\M193239 (V3)withflecksneviamber.jpg');
 %gamma correction, used only for detection of the pupil.
 img_gamm = igamm(img, 'sRGB');%gamma correction.
 %Finding Pupil
 [all_blobs,pupil] = findPupil( img_gamm );
 %if pupil detected, the flag value will be 1.
-[outputBlob,pupilFlag] = blobNoiseReduction( all_blobs );
+[outputBlob,pupilFlag] = blobNoiseReduction( all_blobs, 3000, 950 );
 if (pupilFlag == 1)
      disp('Pupil Detected.'); 
      %Displaying detected pupil
@@ -18,7 +18,7 @@ if (pupilFlag == 1)
      [row,col]=find(binaryImage);
      PupilPixels = [row,col];
      img = (uint8(rgbImage)*255) + img;
-     figure,imshow('SampleData\No_LimbalRing\M134944 (V3)withFlecksNeviinhibitedWithWeakAmbientGradient.jpg');
+     figure,imshow('SampleData\M193239 (V3)withflecksneviamber.jpg');
      %RGB values of the detected pupil.
      RGBpixels=impixel(img,col,row);
      %Doing canny edge detection.
@@ -27,6 +27,18 @@ if (pupilFlag == 1)
      iris = irisRetriever(edged_canny_image,edged_pupil_image);
      rgbImage_iris = cat(3, iris, iris, iris);
      edged_canny_iris = cannyEdgeDetector_forPupil(uint8(rgbImage_iris));
+     tracedIris = TraceCompleter(TraceCompleter(TraceCompleter(TraceCompleter(TraceCompleter(TraceCompleter(iris))))));
+     tracedIris_blobs = iblobs(tracedIris,'boundary');
+     [tracedIris_blobs_up,irisFlag] = blobNoiseReduction(tracedIris_blobs,20000,10000);
+     if(irisFlag == 1)
+        disp('Iris Detected.'); 
+        tracedIris_blobs_up.plot_box; %For blob boxes.
+        box_side_iris = sqrt(tracedIris_blobs_up.bboxarea);
+        result_iris = tracedIris_blobs_up.bbox;
+        hEllipse_iris = imellipse(gca,[result_iris(1) result_iris(2) box_side_iris box_side_iris]);
+        binaryImage_iris = hEllipse_iris.createMask();
+        figure,imshow('SampleData\M193239 (V3)withflecksneviamber.jpg');
+     end
  else
     disp('The eye input is invalid.'); 
 end

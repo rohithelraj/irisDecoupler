@@ -84,13 +84,13 @@ function iris = irisRetriever(edgeInput,pupil)
                 %prepended
                 irisCoordinates_prepended = findIrisCoordinates([co_x co_y],[centroid(2) centroid(1)],radii_spatial-1);
                 if(edgeInput(irisCoordinates_real(2),irisCoordinates_real(1)) == 1)
-                    disp('Working G 1');
+                    %disp('Working G 1');
                     iris(irisCoordinates_real(2),irisCoordinates_real(1)) = 1;
                 elseif(edgeInput(irisCoordinates_appended(2),irisCoordinates_appended(1)) == 1)
-                    disp('Working G 2');
+                    %disp('Working G 2');
                     iris(irisCoordinates_appended(2),irisCoordinates_appended(1)) = 1;
                 elseif(edgeInput(irisCoordinates_prepended(2),irisCoordinates_prepended(1)) == 1)
-                    disp('Working G 3');
+                    %disp('Working G 3');
                     iris(irisCoordinates_prepended(2),irisCoordinates_prepended(1)) = 1;
                 end  
             elseif ((centroid(1) > co_y)&&(centroid(2) > co_x))%|H|cautious. Threshold point (271,54).
@@ -101,13 +101,13 @@ function iris = irisRetriever(edgeInput,pupil)
                 %prepended
                 irisCoordinates_prepended = findIrisCoordinates([co_x co_y],[centroid(2) centroid(1)],radii_spatial-1);
                 if(edgeInput(irisCoordinates_real(2),irisCoordinates_real(1)) == 1)
-                    disp('Working H 1');
+                    %disp('Working H 1');
                     iris(irisCoordinates_real(2),irisCoordinates_real(1)) = 1;
                 elseif(edgeInput(irisCoordinates_appended(2),irisCoordinates_appended(1)) == 1)
-                    disp('Working H 2');
+                    %disp('Working H 2');
                     iris(irisCoordinates_appended(2),irisCoordinates_appended(1)) = 1;
                 elseif(edgeInput(irisCoordinates_prepended(2),irisCoordinates_prepended(1)) == 1)
-                    disp('Working H 3');
+                    %disp('Working H 3');
                     iris(irisCoordinates_prepended(2),irisCoordinates_prepended(1)) = 1;
                 end          
                 
@@ -119,13 +119,13 @@ function iris = irisRetriever(edgeInput,pupil)
                 %prepended
                 irisCoordinates_prepended = findIrisCoordinates([co_x co_y],[centroid(2) centroid(1)],radii_spatial-1);
                 if(edgeInput(irisCoordinates_real(2),irisCoordinates_real(1)) == 1)
-                    disp('Working F 1');
+                    %disp('Working F 1');
                     iris(irisCoordinates_real(2),irisCoordinates_real(1)) = 1;
                 elseif(edgeInput(irisCoordinates_appended(2),irisCoordinates_appended(1)) == 1)
-                    disp('Working F 2');
+                    %disp('Working F 2');
                     iris(irisCoordinates_appended(2),irisCoordinates_appended(1)) = 1;
                 elseif(edgeInput(irisCoordinates_prepended(2),irisCoordinates_prepended(1)) == 1)
-                    disp('Working F 3');
+                    %disp('Working F 3');
                     iris(irisCoordinates_prepended(2),irisCoordinates_prepended(1)) = 1;
                 end             
             elseif ((centroid(2) > co_x)&&(centroid(1) < co_y))%|E|
@@ -136,13 +136,13 @@ function iris = irisRetriever(edgeInput,pupil)
                 %prepended
                 irisCoordinates_prepended = findIrisCoordinates([co_x co_y],[centroid(2) centroid(1)],radii_spatial-1);
                 if(edgeInput(irisCoordinates_real(2),irisCoordinates_real(1)) == 1)
-                    disp('Working E 1');
+                    %disp('Working E 1');
                     iris(irisCoordinates_real(2),irisCoordinates_real(1)) = 1;
                 elseif(edgeInput(irisCoordinates_appended(2),irisCoordinates_appended(1)) == 1)
-                    disp('Working E 2');
+                    %disp('Working E 2');
                     iris(irisCoordinates_appended(2),irisCoordinates_appended(1)) = 1;
                 elseif(edgeInput(irisCoordinates_prepended(2),irisCoordinates_prepended(1)) == 1)
-                    disp('Working E 3');
+                    %disp('Working E 3');
                     iris(irisCoordinates_prepended(2),irisCoordinates_prepended(1)) = 1;
                 end             
             else
