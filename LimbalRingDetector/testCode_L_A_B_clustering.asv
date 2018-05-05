@@ -1,0 +1,12 @@
+load regioncoordinates;
+
+nColors = 6;
+sample_regions = false([size(iris_actual_nopupil,1) size(iris_actual_nopupil,2) nColors]);
+
+for count = 1:nColors
+  sample_regions(:,:,count) = roipoly(iris_actual_nopupil,region_coordinates(:,1,count),...
+                                      region_coordinates(:,2,count));
+end
+
+imshow(sample_regions(:,:,2)),title('sample region for red');
+lab_fabric = rgb2lab(fabric);
