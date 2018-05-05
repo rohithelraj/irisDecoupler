@@ -1,4 +1,4 @@
-img = iread('SampleData\M901542 (V3)withFlecksNEvi.jpg');
+img = iread('SampleData\M062327 (V3)multipleStarburstswithFlecksNeviInhibitedAmberGradient.jpg');
 %gamma correction, used only for detection of the pupil.
 img_gamm = igamm(img, 'sRGB');%gamma correction.
 %Finding Pupil
@@ -18,7 +18,7 @@ if (pupilFlag == 1)
      [row,col]=find(binaryImage);
      PupilPixels = [row,col];
      img_nopupil = (uint8(rgbImage)*255) + img;
-     figure,imshow('SampleData\M901542 (V3)withFlecksNEvi.jpg');
+     figure,imshow('SampleData\M062327 (V3)multipleStarburstswithFlecksNeviInhibitedAmberGradient.jpg');
      %RGB values of the detected pupil.
      %RGBpixels=impixel(img_nopupil,col,row);
      %Doing canny edge detection.
@@ -36,10 +36,10 @@ if (pupilFlag == 1)
         tracedIris_blobs_up.plot_box; %For blob boxes.
         box_side_iris = sqrt(tracedIris_blobs_up.bboxarea);
         result_iris = tracedIris_blobs_up.bbox;
-        hEllipse_iris = imellipse(gca,[result_iris(1) result_iris(2) box_side_iris box_side_iris]);
+        hEllipse_iris = imellipse(gca,[result_iris(1)-4 result_iris(2)-4 box_side_iris+3 box_side_iris+3]);
         binaryImage_iris = hEllipse_iris.createMask();
         binaryImage_iris_compl = imcomplement(binaryImage_iris);
-        figure,imshow('SampleData\M901542 (V3)withFlecksNEvi.jpg');
+        figure,imshow('SampleData\M062327 (V3)multipleStarburstswithFlecksNeviInhibitedAmberGradient.jpg');
         rgbImage_iris = cat(3, binaryImage_iris_compl, binaryImage_iris_compl, binaryImage_iris_compl);
         iris_actual =  (uint8(rgbImage_iris)*255) + img;
         %binaryImage_pupil_compl = imcomplement(binaryImage);
