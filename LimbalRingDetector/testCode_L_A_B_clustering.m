@@ -1,4 +1,4 @@
-%Source: MATLAB : https://de.mathworks.com/help/images/examples/color-based-segmentation-using-the-l-a-b-color-space.html#d119e2715
+%Source: MATLAB : https://de.mathworks.com/help/images/examples/color-based-segmentation-using-the-l-a-b-color-space.html
 load regioncoordinates;
 
 nColors = 6;
