@@ -1,4 +1,4 @@
-img = iread('SampleData\No_LimbalRing\M134944 (V3)withFlecksNeviinhibitedWithWeakAmbientGradient.jpg');
+img = iread('SampleData\M623148 (V3).jpg');
 %gamma correction, used only for detection of the pupil.
 img_gamm = igamm(img, 'sRGB');%gamma correction.
 %Finding Pupil
@@ -18,7 +18,7 @@ if (pupilFlag == 1)
      [row,col]=find(binaryImage);
      PupilPixels = [row,col];
      img_nopupil = (uint8(rgbImage)*255) + img;
-     figure,imshow('SampleData\No_LimbalRing\M134944 (V3)withFlecksNeviinhibitedWithWeakAmbientGradient.jpg');
+     figure,imshow('SampleData\M623148 (V3).jpg');
      %RGB values of the detected pupil.
      %RGBpixels=impixel(img_nopupil,col,row);
      %Doing canny edge detection.
@@ -39,13 +39,13 @@ if (pupilFlag == 1)
         hEllipse_iris = imellipse(gca,[result_iris(1) result_iris(2) box_side_iris box_side_iris]);
         binaryImage_iris = hEllipse_iris.createMask();
         binaryImage_iris_compl = imcomplement(binaryImage_iris);
-        figure,imshow('SampleData\No_LimbalRing\M134944 (V3)withFlecksNeviinhibitedWithWeakAmbientGradient.jpg');
+        figure,imshow('SampleData\M623148 (V3).jpg');
         rgbImage_iris = cat(3, binaryImage_iris_compl, binaryImage_iris_compl, binaryImage_iris_compl);
         iris_actual =  (uint8(rgbImage_iris)*255) + img;
         %binaryImage_pupil_compl = imcomplement(binaryImage);
         rgbImage_pupil = cat(3, binaryImage, binaryImage, binaryImage);
         iris_actual_nopupil = (uint8(rgbImage_pupil)*255) + iris_actual;
-        
+        figure, imshow(iris_actual_nopupil);
      end
  else
     disp('The eye input is invalid.'); 
