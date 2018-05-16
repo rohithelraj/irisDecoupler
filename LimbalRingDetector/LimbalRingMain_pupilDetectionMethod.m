@@ -39,7 +39,7 @@ if (pupilFlag == 1)
         box_side_iris = sqrt(tracedIris_blobs_up.bboxarea);
         result_iris = tracedIris_blobs_up.bbox;
         %For distinguishing color variations.
-        hEllipse_iris = imellipse(gca,[result_iris(1)-4 result_iris(2)-4 box_side_iris+2 box_side_iris+2]);
+        hEllipse_iris = imellipse(gca,[result_iris(1)-5 result_iris(2)-5 box_side_iris+18 box_side_iris+18]);
         %For non distinguishing color variations.
         %hEllipse_iris = imellipse(gca,[result_iris(1) result_iris(2) box_side_iris box_side_iris]);
         binaryImage_iris = hEllipse_iris.createMask();
