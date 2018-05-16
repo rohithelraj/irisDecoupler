@@ -26,7 +26,7 @@ if (pupilFlag == 1)
      %Doing canny edge detection.
      edged_canny_image = cannyEdgeDetector_forEye(img_nopupil); 
      edged_pupil_image = cannyEdgeDetector_forEye(uint8(rgbImage)); 
-     iris = irisRetriever(edged_canny_image,edged_pupil_image);
+     [iris,standard_count,plus_count,minus_count] = irisRetriever(edged_canny_image,edged_pupil_image);
      rgbImage_iris = cat(3, iris, iris, iris);
      edged_canny_iris = cannyEdgeDetector_forEye(uint8(rgbImage_iris));
      %recursive call of trace completer, 6 times.
