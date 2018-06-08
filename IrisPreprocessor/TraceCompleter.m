@@ -11,7 +11,7 @@ function tracedIris = TraceCompleter(iris)
             for i = 1:(400-x)
                 if((x_detect_flag_front == 0))
                     if((iris(y,x+i) == 1))
-                        x_detect_flag_front = 1;
+                        %x_detect_flag_front = 1;
                         if(i > 1)
                             for j = 1:(i-1)
                                 tracedIris(y,x+j) = 1;
