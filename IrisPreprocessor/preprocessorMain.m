@@ -1,6 +1,6 @@
 %image data loader argument types -> no Limbal Ring,no collarette with
 %limbal ring, with Limbal Ring, without Limbal Ring and collorate.
-[img,img_name] = imageDataLoader('without Limbal Ring and collorate',1);
+[img,img_name] = imageDataLoader('with Limbal Ring',6);
 %gamma correction, used only for detection of the pupil.
 img_gamm = igamm(img, 'sRGB');%gamma correction.
 %Finding Pupil
@@ -21,7 +21,7 @@ if (pupilFlag == 1)
      [row,col]=find(binaryImage);
      PupilPixels = [row,col];
      img_nopupil = (uint8(rgbImage)*255) + img;
-     figure,imshow(imageDataLoader('without Limbal Ring and collorate',1));
+     figure,imshow(imageDataLoader('with Limbal Ring',6));
      
      %RGB values of the detected pupil.
      %RGBpixels=impixel(img_nopupil,col,row);
@@ -50,8 +50,8 @@ if (pupilFlag == 1)
         %hEllipse_iris = imellipse(gca,[result_iris(1) result_iris(2) box_side_iris box_side_iris]);
         binaryImage_iris = hEllipse_iris.createMask();
         binaryImage_iris_compl = imcomplement(binaryImage_iris);
-        title(sprintf('Iris Trace: without Limbal Ring and collorate \n %s \n Counts: Plus> %d Minus> %d Standard> %d Plus2> %d Minus2> %d',img_name,plus_count,minus_count,standard_count,plus_count_2,minus_count_2));
-        figure,imshow(imageDataLoader('without Limbal Ring and collorate',1));
+        title(sprintf('Iris Trace: with Limbal Ring \n %s \n Counts: Plus> %d Minus> %d Standard> %d Plus2> %d Minus2> %d',img_name,plus_count,minus_count,standard_count,plus_count_2,minus_count_2));
+        figure,imshow(imageDataLoader('with Limbal Ring',6));
        
         rgbImage_iris = cat(3, binaryImage_iris_compl, binaryImage_iris_compl, binaryImage_iris_compl);
         iris_actual =  (uint8(rgbImage_iris)*255) + img;
