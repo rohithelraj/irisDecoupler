@@ -17,7 +17,7 @@ function [sample_image, image_name] = imageDataLoader(type,sample_number)
                     sample_image = iread('SampleData\No_LimbalRing\M154400 (V3)withFlecksNeviInhibitWeakAmberGradient.jpg');          
                     image_name = 'M154400 (V3)withFlecksNeviInhibitWeakAmberGradient';  
                 case 4
-                    sample_image = iread('SampleData\No_LimbalRing\M180146 (V3)multipleStarburstsWithinhibitedWeakAmberGradient.jpg');           
+                    sample_image = iread('SampleData\M180146 (V3)multipleStarburstsWithinhibitedWeakAmberGradient.jpg');           
                     image_name = 'M180146 (V3)multipleStarburstsWithinhibitedWeakAmberGradient';                     
                 otherwise
                     disp('Invalid Sample number in imageDataLoader->'+type);
@@ -94,13 +94,7 @@ function [sample_image, image_name] = imageDataLoader(type,sample_number)
                     image_name = 'M142748 (V3)withflecksnevi';   
                 case 6
                     sample_image = iread('SampleData\noCollorateSNP_noLimbalRing\M144342 (V3)withFlecksNevi.jpg');
-                    image_name = 'M144342 (V3)withFlecksNevi';       
-                case 7
-                    sample_image = iread('SampleData\noCollorateSNP_noLimbalRing\M275143 (V3).jpg');
-                    image_name = 'M275143 (V3)';  
-                case 8
-                    sample_image = iread('SampleData\noCollorateSNP_noLimbalRing\M450776 (V3)withFlecksNeviwithInhibitWeakAmberGradient.jpg');
-                    image_name = 'M450776 (V3)withFlecksNeviwithInhibitWeakAmberGradient';                     
+                    image_name = 'M144342 (V3)withFlecksNevi';                      
                 otherwise
                     disp('Invalid Sample number in imageDataLoader->'+type);
             end

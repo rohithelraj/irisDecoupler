@@ -1,6 +1,7 @@
 function [sample_image, image_name] = imageDataLoader(type,sample_number)
 %IMAGEDATALOADER Summary of this function goes here
-%   Function for loading sample data from file explorer
+%   install Robotics toolbox 10.2
+%   Then Machine vision Toolbox 4.1
 
     switch type
         case 'no Limbal Ring'
