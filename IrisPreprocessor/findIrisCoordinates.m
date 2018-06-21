@@ -25,6 +25,6 @@ line_vector = [(pupilPoint(1)-centroid(1)) (pupilPoint(2)-centroid(2))];
 normal = sqrt((line_vector(1)^2)+(line_vector(2)^2));
 line_vector_normal = [(line_vector(1)/normal) (line_vector(2)/normal)];
 line_vector_normal_D = radii_spatial * line_vector_normal;
-irisCoordinates = ceil(line_vector_normal_D + pupilPoint);
+irisCoordinates = abs(ceil(line_vector_normal_D + pupilPoint));
 end
 

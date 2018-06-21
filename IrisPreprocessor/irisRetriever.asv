@@ -193,12 +193,7 @@ function [iris,standard_count,plus_count,minus_count,plus_count_2,minus_count_2]
                 irisCoordinates_appended_2 = findIrisCoordinates([co_x co_y],[centroid(2) centroid(1)],radii_spatial+2);
                 %prepended
                 irisCoordinates_prepended_2 = findIrisCoordinates([co_x co_y],[centroid(2) centroid(1)],radii_spatial-2);
-                
-                %An unwanted negative came up at some point for Sample
-                %M144342 solved by finding absolute in 'findIrisCoordinates'
-                %fprintf('\n REALx %d : REALy %d',irisCoordinates_real(2),irisCoordinates_real(1));
-                
-                
+                disp(sprintf('REALx %d : REALy %d',irisCoordinates_real(2,irisCoordinates_real(1)));
                 if(edgeInput(irisCoordinates_real(2),irisCoordinates_real(1)) == 1)
                     %disp('Working F 1');
                     standard_count = standard_count + 1;
