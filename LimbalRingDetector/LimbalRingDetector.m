@@ -1,4 +1,4 @@
-[iris_actual_nopupil,img_name] = imageDataLoader('no Limbal Ring',1);
+[iris_actual_nopupil,img_name] = imageDataLoader('with Limbal Ring',1);
 %Source - Matlab : https://de.mathworks.com/help/images/examples/color-based-segmentation-using-k-means-clustering.html
 lab_iris_actual_nopupil = rgb2lab(iris_actual_nopupil);
 ab = lab_iris_actual_nopupil(:,:,2:3);
@@ -29,3 +29,4 @@ figure,imshow(segmented_images{3});
 % figure,imshow(segmented_images{8}), title('objects in cluster 8');
 figure,imshow(iris_actual_nopupil), title('Actual Image');
 title(sprintf('Iris Trace: with Limbal Ring \n %s ',img_name));
+

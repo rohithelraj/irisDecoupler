@@ -1,7 +1,7 @@
-function [resultant,iris_actual] = imageNoiseRemover()
+function [resultant,iris_actual] = imageNoiseRemover(input_image,noiser)
     %IMAGENOISEREMOVER Summary of this function goes here
     %   Detailed explanation goes here
-    noise_removal_sample = iread('eye_sections\noiseRemovalSample.jpg');
+    noise_removal_sample = noiser;
 
     lab_noise_removal_sample = rgb2lab(noise_removal_sample);
     ab = lab_noise_removal_sample(:,:,2:3);
@@ -29,13 +29,28 @@ function [resultant,iris_actual] = imageNoiseRemover()
     for x = 1:rows
         for y = 1:columns
             if noiseless_iris_section(x,y) == 0
-                resultant(x,y) = 255;
+                resultant(x,y) = 1;
             else
                 resultant(x,y) = 0;
             end
         end
     end
-   resultant_rgb = cat(3, resultant, resultant, resultant);
-   iris_actual =  (uint8(resultant_rgb)) * noise_removal_sample; 
+   %resultant_compl = imcomplement(resultant);
+   resultant_lab_compl = cat(3, resultant, resultant, resultant);
+  % resultant_rgb = lab2rgb(resultant_lab);
+   %iris_actual = resultant_rgb;
+   iris_actual =  resultant_lab_compl .* input_image; 
+   iris_actual_mono = imono(iris_actual);
+   [rows,columns,noChannels] = size(imono(iris_actual_mono));
+    for x = 1:rows
+        for y = 1:columns
+            if iris_actual_mono(x,y) == 0
+                iris_actual(x,y,1) = 255;
+                iris_actual(x,y,2) = 255;
+                iris_actual(x,y,3) = 255;
+
+            end
+        end
+    end
 end
 
