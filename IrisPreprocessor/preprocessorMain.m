@@ -2,7 +2,7 @@
 %limbal ring, with Limbal Ring, without Limbal Ring and collorate.
 clc
 clear all
-[img,img_name] = imageDataLoader('with Limbal Ring',4);
+[img,img_name] = imageDataLoader('without Limbal Ring and collorate',8);
 %gamma correction, used only for detection of the pupil.
 img_gamm = igamm(img, 'sRGB');%gamma correction.
 %Finding Pupil
@@ -23,7 +23,7 @@ if (pupilFlag == 1)
      [row,col]=find(binaryImage);
      PupilPixels = [row,col];
      img_nopupil = (uint8(rgbImage)*255) + img;
-     figure,imshow(imageDataLoader('with Limbal Ring',4));
+     %figure,imshow(imageDataLoader('no collarette with limbal ring',6));
      
      %RGB values of the detected pupil.
      %RGBpixels=impixel(img_nopupil,col,row);
@@ -53,7 +53,7 @@ if (pupilFlag == 1)
         binaryImage_iris = hEllipse_iris.createMask();
         binaryImage_iris_compl = imcomplement(binaryImage_iris);
         title(sprintf('Iris Trace: with Limbal Ring \n %s \n Counts: Plus> %d Minus> %d Standard> %d Plus2> %d Minus2> %d',img_name,plus_count,minus_count,standard_count,plus_count_2,minus_count_2));
-        figure,imshow(imageDataLoader('with Limbal Ring',4));
+       % figure,imshow(imageDataLoader('no collarette with limbal ring',6));
        
         rgbImage_iris = cat(3, binaryImage_iris_compl, binaryImage_iris_compl, binaryImage_iris_compl);
         iris_actual =  (uint8(rgbImage_iris)*255) + img;
@@ -62,9 +62,9 @@ if (pupilFlag == 1)
         iris_actual_nopupil = (uint8(rgbImage_pupil)*255) + iris_actual;
         
         noiser = load('eye_sections\noiser.mat');
-        anp = getfield(noiser, 'noiser');
-        [noiseless_iris_section,one] = imageNoiseRemover(iris_actual_nopupil, anp);
-        figure, imshow(one);
+        cap_area_eye = getfield(noiser, 'noiser');
+        [noiseless_iris_section,clean_iris_no_pupil] = imageNoiseRemover(iris_actual_nopupil, cap_area_eye);
+        figure, imshow(clean_iris_no_pupil);
      end
  else
     disp('The eye input is invalid.'); 

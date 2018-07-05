@@ -41,7 +41,7 @@ function [resultant,iris_actual] = imageNoiseRemover(input_image,noiser)
    %iris_actual = resultant_rgb;
    iris_actual =  resultant_lab_compl .* input_image; 
    iris_actual_mono = imono(iris_actual);
-   [rows,columns,noChannels] = size(imono(iris_actual_mono));
+   [rows,columns,noChannels] = size(iris_actual_mono);
     for x = 1:rows
         for y = 1:columns
             if iris_actual_mono(x,y) == 0
