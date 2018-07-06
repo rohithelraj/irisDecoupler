@@ -1,4 +1,4 @@
-[iris_actual_nopupil,img_name] = imageDataLoader('no Limbal Ring',4);
+[iris_actual_nopupil,img_name] = imageDataLoader('without Limbal Ring and collorate',8);
 %This detection works only with green colored eyes.
 result = iris_actual_nopupil;
 lab_iris_actual_nopupil = rgb2lab(iris_actual_nopupil);
