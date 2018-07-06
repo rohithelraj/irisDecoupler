@@ -1,4 +1,4 @@
-[iris_actual_nopupil,img_name] = imageDataLoader('with Limbal Ring',1);
+[iris_actual_nopupil,img_name] = imageDataLoader('no Limbal Ring',1);
 %This detection works only with green colored eyes.
 result = iris_actual_nopupil;
 lab_iris_actual_nopupil = rgb2lab(iris_actual_nopupil);
@@ -6,60 +6,13 @@ hsv = rgb2hsv(lab_iris_actual_nopupil);
 %generic implementation for all colored eyes.
 rounded_hsv = round(hsv(:,:,1),5);
 [hsvCounts,hsvValues]  = imhist(rounded_hsv,1000);
-
-%mechanism to find the range.
-counter_range = 1;
-first_flag = 0;
-count_size = size(hsvCounts);
-min_hsv_val = 0.0000;
-max_hsv_val = 0.0000;
-min_count_val = 0;
-max_count_val = 0;
-RangeHSV_min(1) = 0.0000;
-RangeHSV_max(1) = 0.0000;
-CountHSV_min(1) = 0;
-CountHSV_max(1) = 0;
-for z = 1:count_size(1)
-    if(hsvCounts(z) ~= 0)
-        if(first_flag == 0)
-            min_hsv_val = hsvValues(z);
-            min_count_val = hsvCounts(z);
-            first_flag = 1;
-        end
-        max_hsv_val = hsvValues(z);
-        max_count_val = hsvCounts(z);
-        RangeHSV_min(counter_range) = min_hsv_val;
-        RangeHSV_max(counter_range) = max_hsv_val;
-        CountHSV_min(counter_range) = min_count_val;
-        CountHSV_max(counter_range) = max_count_val;        
-    else
-        first_flag = 0;
-        counter_range = counter_range + 1;
-    end
-end
-RangeHSV_min_upd(1) = 0.0000;
-RangeHSV_max_upd(1) = 0.0000;
-CountHSV_min_upd(1) = 0;
-CountHSV_max_upd(1) = 0;
-range_size = size(RangeHSV_min);
-counter_range_upd = 1;
-for z = 1:range_size(2)
-    if(RangeHSV_min(z) ~= RangeHSV_max(z))
-        if(((z+1) < range_size(2))||((z+1) == range_size(2)))
-            if((RangeHSV_min(z) ~= RangeHSV_min(z+1)))
-                RangeHSV_min_upd(counter_range_upd) = RangeHSV_min(z);
-                RangeHSV_max_upd(counter_range_upd) = RangeHSV_max(z);
-                CountHSV_min_upd(counter_range_upd) = RangeHSV_min(z);
-                CountHSV_max_upd(counter_range_upd) = RangeHSV_max(z);
-                counter_range_upd = counter_range_upd + 1;
-            end
-        elseif(z == range_size(2))
-            RangeHSV_min_upd(counter_range_upd) = RangeHSV_min(z);
-            RangeHSV_max_upd(counter_range_upd) = RangeHSV_max(z);
-        end
-        
-    end
-end
+[M,I] = max(hsvCounts);
+sortedCounts = sort();
+Peak = hsvValues(I);
+[RangeHSV_min,RangeHSV_max,CountHSV_min,CountHSV_max] = hSVRangeFinder(hsvCounts,hsvValues);
+[RangeWiseCount] = hSVRangeWiseCountFinder(RangeHSV_min,RangeHSV_max,hsvCounts,hsvValues);
+[BestHSVRange_min,BestHSVRange_max,BestRangeWiseCount] = hSVRangeFilter(RangeWiseCount,RangeHSV_min,RangeHSV_max,100);
+lastRangeIndex = size(BestHSVRange_min);
 [rows,columns,noChannels] = size(hsv);
     for x = 1:rows
         for y = 1:columns
@@ -68,7 +21,11 @@ end
                 result(x,y,2) = 0;
                 result(x,y,3) = 0;
             end
-            
-        end
+            if~((hsv(x,y,1) > Peak)&&(rounded_hsv(x,y) < BestHSVRange_max(lastRangeIndex(1))))
+                result(x,y,1) = 0;
+                result(x,y,2) = 0;
+                result(x,y,3) = 0;            
+            end
+        end 
     end
   idisp({result,iris_actual_nopupil});  
