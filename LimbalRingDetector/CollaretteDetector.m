@@ -1,4 +1,4 @@
-[iris_actual_nopupil,img_name] = imageDataLoader('without Limbal Ring and collorate',8);
+[iris_actual_nopupil,img_name] = imageDataLoader('with Limbal Ring',1);
 %This detection works only with green colored eyes.
 result = iris_actual_nopupil;
 lab_iris_actual_nopupil = rgb2lab(iris_actual_nopupil);
@@ -9,12 +9,12 @@ rounded_hsv = hsv(:,:,1);
 [M,I] = max(hsvCounts);
 sortedCounts = sort(hsvCounts,'descend');
 count_size = size(hsvCounts);
-Peak = hsvValues(I);
-for i = 1:count_size(1)
-    if(sortedCounts(41) == hsvCounts(i))
-        Peak = hsvValues(i);
-    end
-end
+% Peak = hsvValues(I);
+% for i = 1:count_size(1)
+%     if(sortedCounts(41) == hsvCounts(i))
+%         Peak = hsvValues(i);
+%     end
+% end
 
 [RangeHSV_min,RangeHSV_max,CountHSV_min,CountHSV_max] = hSVRangeFinder(hsvCounts,hsvValues);
 [RangeWiseCount] = hSVRangeWiseCountFinder(RangeHSV_min,RangeHSV_max,hsvCounts,hsvValues);
@@ -38,4 +38,19 @@ MinRange = BestHSVRange_min(lastRangeIndex(2));
             end
         end 
     end
-  idisp({result,iris_actual_nopupil});  
+upd_result = rgb2gray(result);   
+upd_result = im2bw(upd_result,0.1);    
+    
+    
+colatrette = load('Sample_inputs\collarate_processing_sample\collarette_amber.mat');
+collarette_amber = getfield(colatrette,'collarette_amber');    
+
+detect_collarete = upd_result .* collarette_amber;
+
+%binaryImage_iris_compl = imcomplement(binaryImage_iris);
+%detections = iblobs(collarette_amber);
+%[outputBlob,blobCount] = blobNoiseReduction( detections, 1000 , 10 );
+figure,imshow(detect_collarete), title('Existing Probable Collarette Section');  
+figure,imshow(result), title('After H Thresholding');
+figure,imshow(iris_actual_nopupil), title('Actual Image');
+
