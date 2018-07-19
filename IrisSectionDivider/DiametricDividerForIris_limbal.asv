@@ -1,4 +1,4 @@
-[sample_image, image_name, iris_diameter, pupil_diameter, pos_pupil, pos_iris] = imageDataLoader('no collarette with limbal ring',2);
+[sample_image, image_name, iris_diameter, pupil_diameter, pos_pupil, pos_iris] = imageDataLoader('no Limbal Ring',1);
 
 
 %For Limbal Ring Region.
@@ -31,9 +31,9 @@ limbal_actual_actual(:,:,:) = 255;
 %Limbal Ring detection area.
 
 
-
-
-
+%For Collarette Region.
+collarette_section_diameter_outer = iris_diameter - 70;
+collarette_section_diameter_inner = pupil_diameter + 10;
 %For Flecks Region.
 flecks_area_diameter_outer = iris_diameter - 70;
 pos_flecks = 35;
@@ -54,26 +54,8 @@ flecks_actual_actual(:,:,:) = 255;
                     flecks_actual_actual(x,y,:) = 255;
                 elseif (flecks_actual_in(x,y,1) == 255 && flecks_actual_in(x,y,2) == 255 && flecks_actual_in(x,y,3) == 255)
                     flecks_actual_actual(x,y,:) = sample_image(x,y,:);
-                end
-                if ~(limbal_actual_actual(x,y,1) == 255 && limbal_actual_actual(x,y,2) == 255 && limbal_actual_actual(x,y,3) == 255)
-                    flecks_actual_actual(x,y,:) = 255;
                 
                 end
             end
         end 
     end
-    
-    %For Collarette Region.
-collarette_section_diameter = iris_diameter - 110;
-pos_collarette = 55;
-figure,imshow(sample_image);
-hEllipse_collarette_in = imellipse(gca,[(pos_iris(1)+pos_collarette) (pos_iris(2)+pos_collarette) collarette_section_diameter collarette_section_diameter]);
-binaryImage_collarette_in = hEllipse_flecks_in.createMask();
-binaryImage_collarette_in_compl = imcomplement(binaryImage_flecks_in);
-rgbImage_collarette_in = cat(3, binaryImage_collarette_in_compl, binaryImage_collarette_in_compl, binaryImage_collarette_in_compl);
-collarette_actual_in =  (uint8(rgbImage_collarette_in)*255) + sample_image;
-[rows,columns,noChannels] = size(sample_image);
-collarette_actual_actual =  sample_image;
-collarette_actual_actual(:,:,:) = 255; 
-
-    
