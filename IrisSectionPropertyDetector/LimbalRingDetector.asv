@@ -1,4 +1,4 @@
-[iris_actual_nopupil, section_limbalRing, section_flecks, section_collarette, section_stroma, image_name] = imageDataLoader('no collarette with limbal ring',6);
+[iris_actual_nopupil, section_limbalRing, section_flecks, section_collarette, section_stroma, image_name] = imageDataLoader('no collarette with limbal ring',5);
 %Source - Matlab : https://de.mathworks.com/help/images/examples/color-based-segmentation-using-k-means-clustering.html
 lab_iris_actual_nopupil = rgb2lab(section_limbalRing);
 ab = lab_iris_actual_nopupil(:,:,2:3);
@@ -31,11 +31,11 @@ figure,imshow(segmented_images{3});
 % figure,imshow(segmented_images{8}), title('objects in cluster 8');
 figure,imshow(section_flecks), title('Actual Image');
 title(sprintf('Iris Trace: with Limbal Ring \n %s ',image_name));
-[RGB1(1),RGB1(2), RGB1(3), Total1 , count1] = ImageRGBColorAverageFinder(segmented_images{1});
-[RGB2(1),RGB2(2), RGB2(3), Total2, count2] = ImageRGBColorAverageFinder(segmented_images{2});
-[RGB3(1),RGB3(2), RGB3(3), Total3, count3] = ImageRGBColorAverageFinder(segmented_images{3});
-[RGB(1),RGB(2), RGB(3), Total, count4] = ImageRGBColorAverageFinder(section_flecks);
-if (Total-Total1)>26 || (Total-Total2)>26 || (Total-Total3)>26
+[Ravg1,Gavg1, Bavg1, Total1 , count1] = ImageRGBColorAverageFinder(segmented_images{1});
+[Ravg2,Gavg2, Bavg2, Total2, count2] = ImageRGBColorAverageFinder(segmented_images{2});
+[Ravg3,Gavg3, Bavg3, Total3, count3] = ImageRGBColorAverageFinder(segmented_images{3});
+[R,G, B, Total, count4] = ImageRGBColorAverageFinder(section_flecks);
+if (Total-Total1)>30 || (Total-Total2)>26 || (Total-Total3)>30
     disp('Limbal Ring Detected');
 else
     disp('No Limbal Ring Detected');

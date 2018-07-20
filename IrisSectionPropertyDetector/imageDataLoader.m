@@ -39,7 +39,7 @@ function [sample_image, section_limbalRing, section_flecks, section_collarette, 
                     section_stroma = getfield(image, 'section_stroma');                   
                     image_name = 'M762477 (V3)multipleStarburstsWithinhibitedwithweakambergradient';
                 otherwise
-                    disp('Invalid Sample number in imageDataLoader->'+type);
+                    sprintf('Invalid Sample number in imageDataLoader-> %s'+type);
             end
         case 'no collarette with limbal ring'
              switch sample_number
@@ -100,7 +100,7 @@ function [sample_image, section_limbalRing, section_flecks, section_collarette, 
                     section_stroma = getfield(image, 'section_stroma');                   
                     image_name = 'M483878 (V3)InhibitsWeakAmberGradient';                    
                 otherwise
-                    disp('Invalid Sample number in imageDataLoader->'+type);
+                    sprintf('Invalid Sample number in imageDataLoader-> %s'+type);
              end
         case 'with Limbal Ring'     
             switch sample_number
@@ -161,7 +161,7 @@ function [sample_image, section_limbalRing, section_flecks, section_collarette, 
                     section_stroma = getfield(image, 'section_stroma');                   
                     image_name = 'M623148 (V3)';
                 otherwise
-                    disp('Invalid Sample number in imageDataLoader->'+type);
+                    sprintf('Invalid Sample number in imageDataLoader-> %s'+type);
             end
         case 'without Limbal Ring and collorate' 
             switch sample_number
@@ -230,7 +230,7 @@ function [sample_image, section_limbalRing, section_flecks, section_collarette, 
                     section_stroma = getfield(image, 'section_stroma');                    
                     image_name = 'M970076 (V3)withmultipleFlecksNevi';                    
                 otherwise
-                    disp('Invalid Sample number in imageDataLoader->'+type);
+                    sprintf('Invalid Sample number in imageDataLoader-> %s'+type);
             end
         otherwise
             disp('Invalid Type in imageDataLoader'); 
