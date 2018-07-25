@@ -30,13 +30,12 @@ end
 figure,imshow(section_limbalRing), title('Actual Image');
 title(sprintf('Iris Trace: with Limbal Ring \n %s ',image_name));
 figure,imshow(segmented_images{1});
-title(sprintf('Possible Limbal Ring Section \nRed-Avg.: %d \nGreen-Avg.: %d\nBlue-Avg.: %d\nMono-Avg.: %d\nPixel Count: %d',RGB1(1),RGB1(2), RGB1(3), Total1 , count1));
+title(sprintf('Possible Limbal Ring Section \nRed-Avg.: %d \nGreen-Avg.: %d\nBlue-Avg.: %d\Mono-Avg.: %d\nPixel Count: %d',RGB1(1),RGB1(2), RGB1(3), Total1 , count1));
 figure,imshow(segmented_images{2});
-title(sprintf('Possible Limbal Ring Section \nRed-Avg.: %d \nGreen-Avg.: %d\nBlue-Avg.: %d\nMono-Avg.: %d\nPixel Count: %d',RGB2(1),RGB2(2), RGB2(3), Total2 , count2));
+title(sprintf('Possible Limbal Ring Section \nRed-Avg.: %d \nGreen-Avg.: %d\nBlue-Avg.: %d\Mono-Avg.: %d\nPixel Count: %d',RGB1(1),RGB1(2), RGB1(3), Total1 , count1));
 figure,imshow(segmented_images{3});
-title(sprintf('Possible Limbal Ring Section \nRed-Avg.: %d \nGreen-Avg.: %d\nBlue-Avg.: %d\nMono-Avg.: %d\nPixel Count: %d',RGB3(1),RGB3(2), RGB3(3), Total3 , count3));
-figure,imshow(section_flecks);
-title(sprintf('Section Flecks For Comparison \nRed-Avg.: %d \nGreen-Avg.: %d\nBlue-Avg.: %d\nMono-Avg.: %d\nPixel Count: %d',RGB(1),RGB(2), RGB(3), Total , count4));
+title(sprintf('Iris Trace: with Limbal Ring \n %s ',image_name));
+
 if (Total-Total1)>26 || (Total-Total2)>26 || (Total-Total3)>26
     disp('Limbal Ring Detected');
 else

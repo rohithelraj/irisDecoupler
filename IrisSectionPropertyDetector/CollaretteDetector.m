@@ -1,5 +1,5 @@
 
-[iris_actual_nopupil, section_limbalRing, section_flecks, section_collarette, section_stroma, image_name]= imageDataLoader('without Limbal Ring and collorate',8);
+[iris_actual_nopupil, section_limbalRing, section_flecks, section_collarette, section_stroma, image_name]= imageDataLoader('with Limbal Ring',7);
 %This detection works only with green colored eyes.
 result = section_collarette;
 lab_iris_actual_nopupil = rgb2lab(section_collarette);
@@ -51,7 +51,7 @@ ssimval = ssim(uint8(upd_result),uint8(collarette_amber));
 %detections = iblobs(collarette_amber);
 %[outputBlob,blobCount] = blobNoiseReduction( detections, 1000 , 10 );
 %figure,imshow(detect_collarete), title('Existing Probable Collarette Section');  
-figure,imshow(result), title('After H Thresholding');
+figure,imshow(result), title(sprintf('After H Thresholding: \nMin: %d \nMax: %d \nStructural Similarity Index: %d',MinRange,MaxRange,ssimval));
 figure,imshow(section_collarette), title('Actual Image');
 if(ssimval > 0.999)
     disp('Collarette Detected.');
