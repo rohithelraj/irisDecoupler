@@ -1,0 +1,8 @@
+function [outputArg1,outputArg2] = SectoralHeterochromiaDetector(inputArg1,inputArg2)
+%SECTORALHETEROCHROMIADETECTOR Summary of this function goes here
+%   Detailed explanation goes here
+[RGB_flecks(1),RGB_flecks(2), RGB_flecks(3), Total_flecks, count_flecks] = ImageRGBColorAverageFinder(section_flecks);
+outputArg1 = inputArg1;
+outputArg2 = inputArg2;
+end
+

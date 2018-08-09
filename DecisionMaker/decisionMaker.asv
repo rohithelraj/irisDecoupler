@@ -1,0 +1,10 @@
+LimbalRing_flag = 0;
+Collarette_flag = 0;
+Flecks_flag = 0;
+% To be implemented for multiple eyes.
+%anisocoria_flag = 0;
+%complete_heterochromia_flag = 0;
+central_heterochromia_flag = 0;
+sectoral_heterochromia_flag = 0;
+
+LimbalRing_flag = LimbalRingDetectorFn();

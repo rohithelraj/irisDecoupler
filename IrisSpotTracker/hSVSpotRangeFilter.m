@@ -1,4 +1,4 @@
-function [HSV_rangeMinVal,HSV_rangeMaxVal,HSV_rangeMinValIndex,HSV_rangeMaxValIndex] = hSVRangeFilter(HSV_zeroVal,HSV_zeroIndex)
+function [HSV_rangeMinVal,HSV_rangeMaxVal,HSV_rangeMinValIndex,HSV_rangeMaxValIndex] = hSVSpotRangeFilter(HSV_zeroVal,HSV_zeroIndex)
 %HSVRANGEFILTER Summary of this function goes here
 %   Filers the best ranges that havve the possibilies to be a collarette
 %   section.
