@@ -1,0 +1,8 @@
+[~, ~, section_flecks, ~, ~, image_name] = imageDataLoader('with flecks',1);
+lab_section_flecks = rgb2lab(section_flecks);
+hsv_section_flecks = rgb2hsv(lab_section_flecks);
+rounded_hsv = hsv_section_flecks(:,:,1);
+[hsvCounts,hsvValues]  = imhist(rounded_hsv,1000);
+[HSV_zeroVal,HSV_zeroIndex] = hSVRangeFinder(hsvCounts,hsvValues);
+[HSV_rangeMinVal,HSV_rangeMaxVal,HSV_rangeMinValIndex,HSV_rangeMaxValIndex] = hSVRangeFilter(HSV_zeroVal,HSV_zeroIndex);
+[MinIndex,MaxIndex] = bestFlecksRangeFinder(HSV_rangeMinValIndex,HSV_rangeMaxValIndex);

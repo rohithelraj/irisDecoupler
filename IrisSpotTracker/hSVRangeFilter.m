@@ -1,22 +1,36 @@
-function [BestHSVRange_min,BestHSVRange_max,BestRangeWiseCount] = hSVRangeFilter(RangeWiseCount,RangeHSV_min,RangeHSV_max,countThreshold)
+function [HSV_rangeMinVal,HSV_rangeMaxVal,HSV_rangeMinValIndex,HSV_rangeMaxValIndex] = hSVRangeFilter(HSV_zeroVal,HSV_zeroIndex)
 %HSVRANGEFILTER Summary of this function goes here
 %   Filers the best ranges that havve the possibilies to be a collarette
 %   section.
-    counter_range = 1;
-    BestHSVRange_min(1) = 0.0000;
-    BestHSVRange_max(1) = 0.0000;
-    BestRangeWiseCount(1) = 0;
-    Range_size = size(RangeHSV_min);
-    
-    for i = 1:Range_size(2)
-        %fprintf('\n in with: %d',RangeWiseCount(i));
-        if(RangeWiseCount(i) > countThreshold)
-            %fprintf('\n out with: %d at counter : %d',RangeWiseCount(i),counter_range);
-            BestHSVRange_min(counter_range) = RangeHSV_min(i);
-            BestHSVRange_max(counter_range) = RangeHSV_max(i);
-            BestRangeWiseCount(counter_range) = RangeWiseCount(i);
-            counter_range = counter_range + 1;
-        end
+    maxSize = size(HSV_zeroVal);
+    HSV_rangeMinVal(1) = 0.0000;
+    HSV_rangeMaxVal(1) = 0.0000;
+
+    HSV_rangeMinValIndex(1) = 1;
+    HSV_rangeMaxValIndex(1) = 1;
+    minCount = 1;
+    maxCount = 1;
+    for i = 1:maxSize(2)
+        if(i == 1)
+            HSV_rangeMinVal(minCount) = HSV_zeroVal(i);
+            HSV_rangeMinValIndex(minCount) = HSV_zeroIndex(i);
+            minCount = minCount + 1;
+
+        else
+            if(HSV_zeroIndex(i-1) == (HSV_zeroIndex(i) - 1) )
+                continue
+            else
+               HSV_rangeMaxVal(maxCount) = HSV_zeroVal(i);
+               HSV_rangeMaxValIndex(maxCount) = HSV_zeroIndex(i); 
+               maxCount = maxCount + 1;
+               if((i+1)<maxSize(2))
+                    HSV_rangeMinVal(minCount) = HSV_zeroVal(i);
+                    HSV_rangeMinValIndex(minCount) = HSV_zeroIndex(i);
+                    minCount = minCount + 1;
+               end
+            end
+
+        end    
     end
 end
 
