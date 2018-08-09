@@ -1,0 +1,24 @@
+function     [RCount ,GCount , BCount , MCount] = sectoralRGBMonoCountFinder(RGB_flecks,image)
+%SECTORALRGBMONOCOUNTFINDER Summary of this function goes here
+%   Detailed explanation goes here
+        for x = 1:rows
+            for y = 1:columns
+                if(~(image(x,y,1) == 255 && image(x,y,2) == 255 && image(x,y,3) == 255))&&(~(image(x,y,1) == 0 && image(x,y,2) == 0 && image(x,y,3) == 0))
+                    if(abs(image(x,y,1)-RGB_flecks(1)) > 20)
+                        RCount = RCount + 1;
+                    end
+                    if(abs(image(x,y,2)-RGB_flecks(2)) > 20)
+                        GCount = GCount + 1;
+                    end
+                    if(abs(image(x,y,3)-RGB_flecks(3)) > 20)
+                        count = count + 1;
+                    end
+                    if(abs(((image(x,y,1)+image(x,y,2)+image(x,y,3))-RGB_flecks(4))/3) > 20)
+                       count = count + 1; 
+                    end
+                    
+                end
+            end 
+        end
+end
+

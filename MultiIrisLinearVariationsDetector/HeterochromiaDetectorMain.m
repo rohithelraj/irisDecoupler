@@ -31,6 +31,13 @@ if(completeHeterochromia == 0)
         disp('Central Heterochromia not detected.');
     end
     %detecting sectoral heterochromia.
+    [SectoralHeterochromia_RGBMonochromeCount(1),SectoralHeterochromia_RGBMonochromeCount(2), SectoralHeterochromia_RGBMonochromeCount(3), SectoralHeterochromia_RGBMonochromeCount(4)] = sectoralRGBMonoCountFinder(RGB_flecks,Total_flecks,section_flecks_left);
+    if(SectoralHeterochromia_RGBMonochromeCount > 20)
+        disp('Sectoral Heterochromia detected.');
+        
+    else
+        disp('Sectoral Heterochromia not detected.');
+    end
 end
 
  
