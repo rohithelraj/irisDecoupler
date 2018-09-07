@@ -1,3 +1,53 @@
+
 Detections = strings(20,1);
+count = 1;
+Detections(count,1) = 'AC at: rs4778241';
+count = count + 1;
+Detections(count,1) = 'AG at: rs4778138';
+count = count + 1;
+Detections(count,1) = 'CC at: rs3794604';
+count = count + 1;
+Detections(count,1) = 'CT at RS12203592';
+count = count + 1;
+Detections(count,1) = 'CT at RS989869';
+count = count + 1;
+Detections(count,1) = 'AA at RS1105879';
+count = count + 1;
+Detections(count,1) = 'TT at RS1129038';
+count = count + 1;
 Detections(count,1) = 'GG at RS12906280';
 count = count + 1;
+Detections(count,1) = 'GT at RS1470608';
+count = count + 1;
+Detections(count,1) = 'AG at RS7174027';
+count = count + 1;
+Detections(count,1) = 'GG at RS16891982';
+count = count + 1;
+Detections(count,1) = 'TT at RS1667394';
+count = count + 1;
+Detections(count,1) = 'TT at RS35405';
+
+Predicted Eye Color for Kit M880636 (V3)
+/opt/gedmatch/databases/kits/V0M880636.bin Resource id #5
+1323980
+Read rule s from top to bottom. In some cases, a rule cancels out results from rules above it.
+ - High Melanin. Adds yellow, amber, or brown. Some darkening. Contributes Amber, Brown.
+ - Adds melanin. Adds yellow, amber, or brown. Some darkening. Contributes to brown.
+ - Blocks some melanin. Often gives light colored eyes.
+ - Blue
+CT at: rs1800407 - Penetr ance Modifier - Blue
+CT at: rs4553604 - Blue.
+CT at: rs1129038 - Adds Yellow.
+AA at: rs1105879 - Weak Amber Gradient
+CG at: rs16891982 - Medium melanin prod uction on Anterior Epithelium. Adds yellow, amber, or brown. Some
+darkening.
+CT at: rs39 35591 - Heavy melanin on Anterior Epithelium. Brown.
+CT at: rs1667394 - Medium melanin production on Anterior Epithe lium. Adds yellow, amber, or brown. Some
+darkening.
+CT at: rs91 6977 - Adds melanin. Adds yellow, amber, or brown.
+AG at: rs7174027 - Adds Yellow.
+AG at: rs7495174 - Adds melanin . Adds yellow, amber, or brown. Some darkening. Contributes to brown.
+
+
+
+
