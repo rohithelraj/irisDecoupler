@@ -1,0 +1,3 @@
+Detections = strings(20,1);
+Detections(count,1) = 'GG at RS12906280';
+count = count + 1;

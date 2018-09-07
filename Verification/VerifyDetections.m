@@ -1,0 +1,9 @@
+LimbalRing_flag = 0;
+Collarette_flag = 0;
+Flecks_flag = 0;
+physical_anisocoria_flag = 0;
+sphincter_contrast_flag = 0;
+Detections = strings(10,1);
+count = 1;
+Detections(count,1) = 'GG at RS12906280';
+count = count + 1;
