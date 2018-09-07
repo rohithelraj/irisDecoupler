@@ -2,7 +2,7 @@
 %Source - Matlab : https://de.mathworks.com/help/images/examples/color-based-segmentation-using-k-means-clustering.html
 lab_iris_actual_nopupil = rgb2lab(section_limbalRing);
 ab = lab_iris_actual_nopupil(:,:,2:3);
-cd=ab;
+cd = ab;
 nrows = size(ab,1);
 ncols = size(ab,2);
 ab = reshape(ab,nrows*ncols,2);

@@ -19,7 +19,7 @@ count_size = size(hsvCounts);
 
 [RangeHSV_min,RangeHSV_max,CountHSV_min,CountHSV_max] = hSVRangeFinder(hsvCounts,hsvValues);
 [RangeWiseCount] = hSVRangeWiseCountFinder(RangeHSV_min,RangeHSV_max,hsvCounts,hsvValues);
-[BestHSVRange_min,BestHSVRange_max,BestRangeWiseCount] = hSVRangeFilter(RangeWiseCount,RangeHSV_min,RangeHSV_max,10);
+[BestHSVRange_min,BestHSVRange_max,BestRangeWiseCount] = hSVRangeFilter_forCollarette(RangeWiseCount,RangeHSV_min,RangeHSV_max,10);
 lastRangeIndex = size(BestHSVRange_min);
 [rows,columns,noChannels] = size(hsv);
 value = BestHSVRange_max(lastRangeIndex(2)) - BestHSVRange_min(lastRangeIndex(2));

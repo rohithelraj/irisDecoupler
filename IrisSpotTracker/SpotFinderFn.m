@@ -6,7 +6,7 @@ function Flecks_flag = SpotFinderFn(section_flecks)
     hsv_section_flecks = rgb2hsv(lab_section_flecks);
     rounded_hsv = hsv_section_flecks(:,:,1);
     [hsvCounts,hsvValues]  = imhist(rounded_hsv,1000);
-    [HSV_zeroVal,HSV_zeroIndex] = hSVRangeFinder(hsvCounts,hsvValues);
+    [HSV_zeroVal,HSV_zeroIndex] = hSVRangeFinder_for_Spot(hsvCounts,hsvValues);
     [~,~,HSV_rangeMinValIndex,HSV_rangeMaxValIndex] = hSVSpotRangeFilter(HSV_zeroVal,HSV_zeroIndex);
     [MinIndex,MaxIndex] = bestFlecksRangeFinder(HSV_rangeMinValIndex,HSV_rangeMaxValIndex);
     sizeMax = size(hsvValues);
@@ -33,10 +33,10 @@ function Flecks_flag = SpotFinderFn(section_flecks)
     
     if(ssimval > 0.999)
         disp('Flecks Detected.');
-        Flecks_flag = 0;
+        Flecks_flag = 1;
     else
         disp('No Flecks Detected.');
-        Flecks_flag = 1;
+        Flecks_flag = 0;
     end
 end
 
