@@ -3,32 +3,41 @@ Detections = strings(20,1);
 count = 1;
 Detections(count,1) = 'AC at RS4778241';
 count = count + 1;
-Detections(count,1) = 'AG at RS4778138';
+Detections(count,1) = 'CT at RS17762363';
 count = count + 1;
 Detections(count,1) = 'CC at RS3794604';
 count = count + 1;
-Detections(count,1) = 'CT at RS12203592';
+Detections(count,1) = 'GG at RS7174027';
 count = count + 1;
-Detections(count,1) = 'CT at RS1800407';
+Detections(count,1) = 'CC at RS9782955';
 count = count + 1;
-Detections(count,1) = 'CT at RS4553604';
+Detections(count,1) = 'CT at RS989869';
+count = count + 1;
+Detections(count,1) = 'CT at RS3947367';
 count = count + 1;
 Detections(count,1) = 'CT at RS1129038';
 count = count + 1;
 Detections(count,1) = 'AA at RS1105879';
 count = count + 1;
-Detections(count,1) = 'CG at RS16891982';
+Detections(count,1) = 'AA at RS4778138';
 count = count + 1;
-Detections(count,1) = 'CT at RS39 35591';
+Detections(count,1) = 'CT at RS3935591';
 count = count + 1;
 Detections(count,1) = 'CT at RS1667394';
 count = count + 1;
-Detections(count,1) = 'CT at RS91 6977';
+Detections(count,1) = 'CT at RS916977';
 count = count + 1;
-Detections(count,1) = 'AG at RS7174027';
+Detections(count,1) = 'GG at RS16891982';
 count = count + 1;
-Detections(count,1) = 'AG at RS7495174';
+Detections(count,1) = 'CC at RS12203592';
+count = count + 1;
+Detections(count,1) = 'CC at RS4779685';
+count = count + 1;
+Detections(count,1) = 'TT at RS35405';
 
+
+
+%Predicted Eye Color for Kit M450776 (V3)
 
 
 
