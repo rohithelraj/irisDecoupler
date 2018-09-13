@@ -232,6 +232,115 @@ function [sample_image, image_name, iris_diameter, pupil_diameter, pos_pupil, po
                 otherwise
                     disp('Invalid Sample number in imageDataLoader->'+type);
             end
+        case 'contrasting sphincter' 
+            switch sample_number
+                case 1
+                    image = load('Sample_inputs\sphincterContrasting\M100902(V3)withFlecksNevi.mat');
+                    sample_image = getfield(image, 'clean_iris_no_pupil');
+                    iris_diameter = getfield(image, 'box_side_iris');
+                    pupil_diameter = getfield(image, 'box_side');
+                    pos_pupil = getfield(image, 'result');
+                    pos_iris = getfield(image, 'result_iris');
+                    image_name = 'M100902(V3)withFlecksNevi';
+                case 2
+                    image = load('Sample_inputs\sphincterContrasting\M124950 (V3)withclearflecksNevi.mat');
+                    sample_image = getfield(image, 'clean_iris_no_pupil');
+                    iris_diameter = getfield(image, 'box_side_iris');
+                    pupil_diameter = getfield(image, 'box_side');
+                    pos_pupil = getfield(image, 'result');
+                    pos_iris = getfield(image, 'result_iris');
+                    image_name = 'M124950 (V3)withclearflecksNevi'; 
+                case 3
+                    image = load('Sample_inputs\sphincterContrasting\M198126 (V3).mat');
+                    sample_image = getfield(image, 'clean_iris_no_pupil');
+                    iris_diameter = getfield(image, 'box_side_iris');
+                    pupil_diameter = getfield(image, 'box_side');
+                    pos_pupil = getfield(image, 'result');
+                    pos_iris = getfield(image, 'result_iris');
+                    image_name = 'M198126 (V3)';
+                case 4
+                    image = load('Sample_inputs\sphincterContrasting\M204249 (V3).mat');
+                    sample_image = getfield(image, 'clean_iris_no_pupil');
+                    iris_diameter = getfield(image, 'box_side_iris');
+                    pupil_diameter = getfield(image, 'box_side');
+                    pos_pupil = getfield(image, 'result');
+                    pos_iris = getfield(image, 'result_iris');
+                    image_name = 'M204249 (V3)';   
+                case 5
+                    image = load('Sample_inputs\sphincterContrasting\M221159 (V3).mat');
+                    sample_image = getfield(image, 'clean_iris_no_pupil');
+                    iris_diameter = getfield(image, 'box_side_iris');
+                    pupil_diameter = getfield(image, 'box_side');
+                    pos_pupil = getfield(image, 'result');
+                    pos_iris = getfield(image, 'result_iris');
+                    image_name = 'M221159 (V3)';       
+                case 6
+                    image = load('Sample_inputs\sphincterContrasting\M264023 (V3).mat');
+                    sample_image = getfield(image, 'clean_iris_no_pupil');
+                    iris_diameter = getfield(image, 'box_side_iris');
+                    pupil_diameter = getfield(image, 'box_side');
+                    pos_pupil = getfield(image, 'result');
+                    pos_iris = getfield(image, 'result_iris');
+                    image_name = 'M264023 (V3)';  
+                case 7
+                    image = load('Sample_inputs\sphincterContrasting\M331051 (V3)withFlecksNeviInhibitsWeakAmberGradient.mat');
+                    sample_image = getfield(image, 'clean_iris_no_pupil');
+                    iris_diameter = getfield(image, 'box_side_iris');
+                    pupil_diameter = getfield(image, 'box_side');
+                    pos_pupil = getfield(image, 'result');
+                    pos_iris = getfield(image, 'result_iris');
+                    image_name = 'M331051 (V3)withFlecksNeviInhibitsWeakAmberGradient';
+                case 8
+                    image = load('Sample_inputs\sphincterContrasting\M372837 (V3)multipleFlexNevi.mat');
+                    sample_image = getfield(image, 'clean_iris_no_pupil');
+                    iris_diameter = getfield(image, 'box_side_iris');
+                    pupil_diameter = getfield(image, 'box_side');
+                    pos_pupil = getfield(image, 'result');
+                    pos_iris = getfield(image, 'result_iris');
+                    image_name = 'M372837 (V3)multipleFlexNevi'; 
+                case 9
+                    image = load('Sample_inputs\sphincterContrasting\M469379 (V3).mat');
+                    sample_image = getfield(image, 'clean_iris_no_pupil');
+                    iris_diameter = getfield(image, 'box_side_iris');
+                    pupil_diameter = getfield(image, 'box_side');
+                    pos_pupil = getfield(image, 'result');
+                    pos_iris = getfield(image, 'result_iris');
+                    image_name = 'M469379 (V3)';
+                case 10
+                    image = load('Sample_inputs\sphincterContrasting\M353214 (V3).mat');
+                    sample_image = getfield(image, 'clean_iris_no_pupil');
+                    iris_diameter = getfield(image, 'box_side_iris');
+                    pupil_diameter = getfield(image, 'box_side');
+                    pos_pupil = getfield(image, 'result');
+                    pos_iris = getfield(image, 'result_iris');
+                    image_name = 'M353214 (V3)';       
+                case 11
+                    image = load('Sample_inputs\sphincterContrasting\M546190 (V3)multipleFlecksNevi.mat');
+                    sample_image = getfield(image, 'clean_iris_no_pupil');
+                    iris_diameter = getfield(image, 'box_side_iris');
+                    pupil_diameter = getfield(image, 'box_side');
+                    pos_pupil = getfield(image, 'result');
+                    pos_iris = getfield(image, 'result_iris');
+                    image_name = 'M546190 (V3)multipleFlecksNevi';  
+                case 12
+                    image = load('Sample_inputs\sphincterContrasting\M571583 (V3).mat');
+                    sample_image = getfield(image, 'clean_iris_no_pupil');
+                    iris_diameter = getfield(image, 'box_side_iris');
+                    pupil_diameter = getfield(image, 'box_side');
+                    pos_pupil = getfield(image, 'result');
+                    pos_iris = getfield(image, 'result_iris');
+                    image_name = 'M571583 (V3)';
+                case 13
+                    image = load('Sample_inputs\sphincterContrasting\M545431 (V3)withinhibitweakamberGradient.mat');
+                    sample_image = getfield(image, 'clean_iris_no_pupil');
+                    iris_diameter = getfield(image, 'box_side_iris');
+                    pupil_diameter = getfield(image, 'box_side');
+                    pos_pupil = getfield(image, 'result');
+                    pos_iris = getfield(image, 'result_iris');
+                    image_name = 'M545431 (V3)withinhibitweakamberGradient'; 
+                otherwise
+                    disp('Invalid Sample number in imageDataLoader->'+type);
+            end            
         otherwise
             disp('Invalid Type in imageDataLoader'); 
     end

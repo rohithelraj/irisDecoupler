@@ -2,7 +2,7 @@
 %limbal ring, with Limbal Ring, without Limbal Ring and collorate.
 clc
 clear all
-[img,img_name] = imageDataLoader('with Limbal Ring',3);
+[img,img_name] = imageDataLoader('contrasting sphincter',13);
 %gamma correction, used only for detection of the pupil.
 img_gamm = igamm(img, 'sRGB');%gamma correction.
 %Finding Pupil

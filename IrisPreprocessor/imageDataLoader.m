@@ -104,6 +104,50 @@ function [sample_image, image_name] = imageDataLoader(type,sample_number)
                 otherwise
                     disp('Invalid Sample number in imageDataLoader->'+type);
             end
+          case 'contrasting sphincter' 
+            switch sample_number
+                case 1
+                    sample_image = iread('SampleData\sphincterContrasting\M100902(V3)withFlecksNevi.jpg');
+                    image_name = 'M100902(V3)withFlecksNevi';
+                case 2
+                    sample_image = iread('SampleData\sphincterContrasting\M124950 (V3)withclearflecksNevi.jpg');
+                    image_name = 'M124950 (V3)withclearflecksNevi'; 
+                case 3
+                    sample_image = iread('SampleData\sphincterContrasting\M198126 (V3).jpg');
+                    image_name = 'M198126 (V3)';
+                case 4
+                    sample_image = iread('SampleData\sphincterContrasting\M204249 (V3).jpg');
+                    image_name = 'M204249 (V3)';   
+                case 5
+                    sample_image = iread('SampleData\sphincterContrasting\M221159 (V3).jpg');
+                    image_name = 'M221159 (V3)';       
+                case 6
+                    sample_image = iread('SampleData\sphincterContrasting\M264023 (V3).jpg');
+                    image_name = 'M264023 (V3)';  
+                case 7
+                    sample_image = iread('SampleData\sphincterContrasting\M331051 (V3)withFlecksNeviInhibitsWeakAmberGradient.jpg');
+                    image_name = 'M331051 (V3)withFlecksNeviInhibitsWeakAmberGradient';
+                case 8
+                    sample_image = iread('SampleData\sphincterContrasting\M372837 (V3)multipleFlexNevi.jpg');
+                    image_name = 'M372837 (V3)multipleFlexNevi'; 
+                case 9
+                    sample_image = iread('SampleData\sphincterContrasting\M469379 (V3).jpg');
+                    image_name = 'M469379 (V3)';
+                case 10
+                    sample_image = iread('SampleData\sphincterContrasting\M353214 (V3).jpg');
+                    image_name = 'M353214 (V3)';       
+                case 11
+                    sample_image = iread('SampleData\sphincterContrasting\M546190 (V3)multipleFlecksNevi.jpg');
+                    image_name = 'M546190 (V3)multipleFlecksNevi';  
+                case 12
+                    sample_image = iread('SampleData\sphincterContrasting\M571583 (V3).jpg');
+                    image_name = 'M571583 (V3)';
+                case 13
+                    sample_image = iread('SampleData\sphincterContrasting\M545431 (V3)withinhibitweakamberGradient.jpg');
+                    image_name = 'M545431 (V3)withinhibitweakamberGradient'; 
+                otherwise
+                    disp('Invalid Sample number in imageDataLoader->'+type);
+            end  
         otherwise
             disp('Invalid Type in imageDataLoader'); 
     end
