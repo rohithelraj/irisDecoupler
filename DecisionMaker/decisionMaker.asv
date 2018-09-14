@@ -10,6 +10,7 @@ count = 1;
 %complete_heterochromia_flag = 0;
 central_heterochromia_flag = 0;
 sectoral_heterochromia_flag = 0;
+contrastingSphincterFlag = 0;
 [iris_actual_nopupil, section_limbalRing, section_flecks, section_collarette, section_stroma, image_name] = ...
 imageDataLoader('with Limbal Ring',4);
 LimbalRing_flag = LimbalRingDetectorFn(section_limbalRing,section_flecks);
@@ -19,9 +20,8 @@ central_heterochromia_flag = CentralHeterochromiaDetectorFn(section_flecks,secti
 sectoral_heterochromia_flag = SectoralHeterochromiaDetectorFn(section_flecks);
 Collarette_flag = collaretteDetectionFn(section_collarette);
 Flecks_flag = SpotFinderFn(section_flecks);
-[accuracy_contrastingSphincter,sphincter_contrast_flag] = ...
+[accuracy_contrastingSphincter,contrastingSphincterFlag] = ...
 contrastingShincterDetectorFn(section_stroma,section_collarette);
-%anisocoria_flag = AnisocoriaDetectorFn(0.5,pupil_diameter_left,pupil_diameter_right);
 if(LimbalRing_flag)
     disp('GG at RS12906280 in Chromosome 15 Gene:Intergenic with 100% Probablility.');
     Detections(count,1) = 'GG at RS12906280';
