@@ -24,7 +24,7 @@ result = zeros(size(section_flecks));
     
 upd_result = rgb2gray(result);   
 upd_result = im2bw(upd_result,0.1);    
-flecks_input = load('SampleInput\flecks_processing_sample\flecks_sample.mat');
+flecks_input = load('SampleInputSpotTrack\flecks_processing_sample\flecks_sample.mat');
 flecks = getfield(flecks_input,'flecks'); 
 ssimval = ssim(uint8(upd_result),uint8(flecks));
 figure,imshow(upd_result), title(sprintf('After H Thresholding: \nMin: %d \nMax: %d \nStructural Similarity Index: %d',minHSVVal,maxHSVVal,ssimval));

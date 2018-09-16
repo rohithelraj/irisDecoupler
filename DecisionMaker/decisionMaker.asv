@@ -67,7 +67,7 @@ if(sphincter_contrast_flag)
     Detections = [Detections;'CT at RS3947367  '];
     count = count + 1;
     disp('CT at RS989869 in Chromosome 15 Gene:OCA2 with 50% Probability.');
-    Detections = [Detections;'CT at RS989869   '];
+    Detections = [Detections;'CT at RS989869'];
     count = count + 1;
 end
 idisp(iris_actual_nopupil);

@@ -1,4 +1,4 @@
-image = load('Sample_inputs\collarate_processing_sample\M193239.mat');
+image = load('Sample_inputs_prop_detect\collarate_processing_sample\M193239.mat');
 sample_image = getfield(image, 'result');
 [rows,columns,noChannels] = size(sample_image);
 collarette_amber = sample_image;

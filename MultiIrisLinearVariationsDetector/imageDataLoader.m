@@ -9,7 +9,7 @@ function [sample_image_left, section_limbalRing_left, section_flecks_left, secti
             switch sample_number
                 case 1
 
-                    image_left = load('SampleInput\Left\M071009 (V3)withFlecksNeviInhibitedwithweakambientgradient.mat');
+                    image_left = load('SampleInputMultiIrisProp\Left\M071009 (V3)withFlecksNeviInhibitedwithweakambientgradient.mat');
                     sample_image_left = getfield(image_left, 'sample_image');
                     section_limbalRing_left = getfield(image_left, 'section_limbalRing');
                     section_flecks_left = getfield(image_left, 'section_flecks');
@@ -17,7 +17,7 @@ function [sample_image_left, section_limbalRing_left, section_flecks_left, secti
                     section_stroma_left = getfield(image_left, 'section_stroma');
                     pupil_diameter_left = getfield(image_left, 'pupil_diameter');
                     image_name_left = 'M071009 (V3)withFlecksNeviInhibitedwithweakambientgradient';
-                    image_right = load('SampleInput\Right\M163349 (V3)withFlecksNevi.mat');
+                    image_right = load('SampleInputMultiIrisProp\Right\M163349 (V3)withFlecksNevi.mat');
                     sample_image_right = getfield(image_right, 'sample_image');
                     section_limbalRing_right = getfield(image_right, 'section_limbalRing');
                     section_flecks_right = getfield(image_right, 'section_flecks');
@@ -31,7 +31,7 @@ function [sample_image_left, section_limbalRing_left, section_flecks_left, secti
         case 'complete heterochromia'     
             switch sample_number
                 case 1
-                    image_left = load('SampleInput\Left\M352114 (V3)withFlecksNeviInhibitWeakamberGradient.mat');
+                    image_left = load('SampleInputMultiIrisProp\Left\M352114 (V3)withFlecksNeviInhibitWeakamberGradient.mat');
                     sample_image_left = getfield(image_left, 'sample_image');
                     section_limbalRing_left = getfield(image_left, 'section_limbalRing');
                     section_flecks_left = getfield(image_left, 'section_flecks');
@@ -39,7 +39,7 @@ function [sample_image_left, section_limbalRing_left, section_flecks_left, secti
                     section_stroma_left = getfield(image_left, 'section_stroma');
                      pupil_diameter_left = getfield(image_left, 'pupil_diameter');
                     image_name_left = 'M352114 (V3)withFlecksNeviInhibitWeakamberGradient';
-                    image_right = load('SampleInput\Right\M483878 (V3)InhibitsWeakAmberGradient.mat');
+                    image_right = load('SampleInputMultiIrisProp\Right\M483878 (V3)InhibitsWeakAmberGradient.mat');
                     sample_image_right = getfield(image_right, 'sample_image');
                     section_limbalRing_right = getfield(image_right, 'section_limbalRing');
                     section_flecks_right = getfield(image_right, 'section_flecks');
@@ -48,7 +48,7 @@ function [sample_image_left, section_limbalRing_left, section_flecks_left, secti
                     image_name_right = 'M483878 (V3)InhibitsWeakAmberGradient';
                      pupil_diameter_right = getfield(image_right, 'pupil_diameter');
                 case 2
-                    image_left = load('SampleInput\Left\M901542 (V3)withFlecksNEvi.mat');
+                    image_left = load('SampleInputMultiIrisProp\Left\M901542 (V3)withFlecksNEvi.mat');
                     sample_image_left = getfield(image_left, 'sample_image');
                     section_limbalRing_left = getfield(image_left, 'section_limbalRing');
                     section_flecks_left = getfield(image_left, 'section_flecks');
@@ -56,7 +56,7 @@ function [sample_image_left, section_limbalRing_left, section_flecks_left, secti
                     section_stroma_left = getfield(image_left, 'section_stroma');
                      pupil_diameter_left = getfield(image_left, 'pupil_diameter');
                     image_name_left = 'M901542 (V3)withFlecksNEvi';
-                    image_right = load('SampleInput\Right\M901542 (V3)withFlecksNEvi.mat');
+                    image_right = load('SampleInputMultiIrisProp\Right\M901542 (V3)withFlecksNEvi.mat');
                     sample_image_right = getfield(image_right, 'sample_image');
                     section_limbalRing_right = getfield(image_right, 'section_limbalRing');
                     section_flecks_right = getfield(image_right, 'section_flecks');
@@ -65,7 +65,7 @@ function [sample_image_left, section_limbalRing_left, section_flecks_left, secti
                     image_name_right = 'M901542 (V3)withFlecksNEvi';
                      pupil_diameter_right = getfield(image_right, 'pupil_diameter');
                 case 3
-                    image_left = load('SampleInput\Left\M144342 (V3)withFlecksNevi.mat');
+                    image_left = load('SampleInputMultiIrisProp\Left\M144342 (V3)withFlecksNevi.mat');
                     sample_image_left = getfield(image_left, 'sample_image');
                     section_limbalRing_left = getfield(image_left, 'section_limbalRing');
                     section_flecks_left = getfield(image_left, 'section_flecks');
@@ -73,7 +73,7 @@ function [sample_image_left, section_limbalRing_left, section_flecks_left, secti
                     section_stroma_left = getfield(image_left, 'section_stroma');
                      pupil_diameter_left = getfield(image_left, 'pupil_diameter');
                     image_name_left = 'M144342 (V3)withFlecksNevi';
-                    image_right = load('SampleInput\Right\M144342 (V3)withFlecksNevi.mat');
+                    image_right = load('SampleInputMultiIrisProp\Right\M144342 (V3)withFlecksNevi.mat');
                     sample_image_right = getfield(image_right, 'sample_image');
                     section_limbalRing_right = getfield(image_right, 'section_limbalRing');
                     section_flecks_right = getfield(image_right, 'section_flecks');
@@ -82,7 +82,7 @@ function [sample_image_left, section_limbalRing_left, section_flecks_left, secti
                     image_name_right = 'M144342 (V3)withFlecksNevi';
                      pupil_diameter_right = getfield(image_right, 'pupil_diameter');
                 case 4
-                    image_left = load('SampleInput\Left\M193239 (V3)withflecksneviamber.mat');
+                    image_left = load('SampleInputMultiIrisProp\Left\M193239 (V3)withflecksneviamber.mat');
                     sample_image_left = getfield(image_left, 'sample_image');
                     section_limbalRing_left = getfield(image_left, 'section_limbalRing');
                     section_flecks_left = getfield(image_left, 'section_flecks');
@@ -90,7 +90,7 @@ function [sample_image_left, section_limbalRing_left, section_flecks_left, secti
                     section_stroma_left = getfield(image_left, 'section_stroma');
                      pupil_diameter_left = getfield(image_left, 'pupil_diameter');
                     image_name_left = 'M193239 (V3)withflecksneviamber';
-                    image_right = load('SampleInput\Right\M193239 (V3)withflecksneviamber.mat');
+                    image_right = load('SampleInputMultiIrisProp\Right\M193239 (V3)withflecksneviamber.mat');
                     sample_image_right = getfield(image_right, 'sample_image');
                     section_limbalRing_right = getfield(image_right, 'section_limbalRing');
                     section_flecks_right = getfield(image_right, 'section_flecks');

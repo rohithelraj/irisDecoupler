@@ -43,7 +43,7 @@ upd_result = rgb2gray(result);
 upd_result = im2bw(upd_result,0.1);    
     
     
-colatrette = load('Sample_inputs\collarate_processing_sample\collarette_amber.mat');
+colatrette = load('Sample_inputs_prop_detect\collarate_processing_sample\collarette_amber.mat');
 collarette_amber = getfield(colatrette,'collarette_amber');    
 ssimval = ssim(uint8(upd_result),uint8(collarette_amber));
 
