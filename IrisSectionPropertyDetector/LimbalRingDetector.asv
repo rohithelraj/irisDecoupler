@@ -37,24 +37,10 @@ figure,imshow(segmented_images{3});
 title(sprintf('Possible Limbal Ring Section \nRed-Avg.: %d \nGreen-Avg.: %d\nBlue-Avg.: %d\nMono-Avg.: %d\nPixel Count: %d',RGB3(1),RGB3(2), RGB3(3), Total3 , count3));
 figure,imshow(section_flecks);
 title(sprintf('Section Flecks For Comparison \nRed-Avg.: %d \nGreen-Avg.: %d\nBlue-Avg.: %d\nMono-Avg.: %d\nPixel Count: %d',RGB(1),RGB(2), RGB(3), Total , count4));
-if(count1 > 20)
-    if((abs(Total-Total1))>26)
-        disp('Limbal Ring Detected');
-    end
-end
-if(count2 > 20)
-    if((abs(Total-Total2))>26)
-        disp('Limbal Ring Detected');
-    end
-end
-if(count3 > 20)
-    if((abs(Total-Total3))>26)
-        disp('Limbal Ring Detected');
-    else
-        disp('No Limbal Ring Detected');
-    end
+
+if (Total-Total1)>26 || (Total-Total2)>26 || (Total-Total3)>26
+    disp('Limbal Ring Detected');
 else
     disp('No Limbal Ring Detected');
 end
-
 
