@@ -32,17 +32,17 @@ function [accuracy,contrastingSphincterFlag] = contrastingShincterDetectorFn(sec
                 (abs(Avg_stromaRGB(2,Index_Max_Stroma_avg) - Avg_collaretteRGB(2))) > 19 ||...
                 (abs(Avg_stromaRGB(3,Index_Max_Stroma_avg) - Avg_collaretteRGB(3))) > 19 
                 accuracy = AcuuracyCalculator(Avg_stromaRGB(:,Index_Max_Stroma_avg), Avg_collaretteRGB, 'contrastingSphincter');
-                fprintf('Contrasting Sphincter  Detected. With an accuracy of -> %d Percentage',accuracy);
+                %fprintf('Contrasting Sphincter  Detected. With an accuracy of -> %d Percentage',accuracy);
                 contrastingSphincterFlag = 1;
 
         else
             accuracy = AcuuracyCalculator(Avg_stromaRGB(:,Index_Max_Stroma_avg), Avg_collaretteRGB, 'contrastingSphincter');
-            fprintf('No Contrasting Sphincter  Detected. With an accuracy of -> %d Percentage',100 - accuracy);
+            %fprintf('No Contrasting Sphincter  Detected. With an accuracy of -> %d Percentage',100 - accuracy);
             contrastingSphincterFlag = 0;
         end
      else
          accuracy = AcuuracyCalculator(Avg_stromaRGB(:,Index_Max_Stroma_avg), Avg_collaretteRGB, 'contrastingSphincter');
-         fprintf('No Contrasting Sphincter  Detected. With an accuracy of -> %d Percentage',100 - accuracy);
+         %fprintf('No Contrasting Sphincter  Detected. With an accuracy of -> %d Percentage',100 - accuracy);
          contrastingSphincterFlag = 0;
      end
 

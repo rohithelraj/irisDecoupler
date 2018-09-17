@@ -26,22 +26,27 @@ function LimbalRing_flag = LimbalRingDetectorFn(section_limbalRing,section_fleck
     [RGB(1),RGB(2), RGB(3), Total, count4] = ImageRGBColorAverageFinder(section_flecks);
     if(count1 > 20)
         if((abs(Total-Total1))>26)
-            disp('Limbal Ring Detected');
+            %disp('Limbal Ring Detected');
+            LimbalRing_flag = 1;
         end
     end
     if(count2 > 20)
         if((abs(Total-Total2))>26)
-            disp('Limbal Ring Detected');
+            %disp('Limbal Ring Detected');
+            LimbalRing_flag = 1;
         end
     end
     if(count3 > 20)
         if((abs(Total-Total3))>26)
-            disp('Limbal Ring Detected');
+            %disp('Limbal Ring Detected');
+            LimbalRing_flag = 1;
         else
-            disp('No Limbal Ring Detected');
+            %disp('No Limbal Ring Detected');
+            LimbalRing_flag = 0;
         end
     else
-        disp('No Limbal Ring Detected');
+        %disp('No Limbal Ring Detected');
+        LimbalRing_flag = 0;
     end
 end
 

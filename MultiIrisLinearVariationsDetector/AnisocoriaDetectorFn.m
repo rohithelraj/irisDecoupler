@@ -4,10 +4,10 @@ function anisocoriaFlag = AnisocoriaDetectorFn(anisocoria_threshold,pupil_diamet
     
     pupilariy_variation = abs(pupil_diameter_left - pupil_diameter_right);
     if(pupilariy_variation > anisocoria_threshold)
-        disp('Physiological anisocoria detected.');
+        %disp('Physiological anisocoria detected.');
         anisocoriaFlag = 1;
     else
-        disp('No Physiological anisocoria Detected');
+        %disp('No Physiological anisocoria Detected');
         anisocoriaFlag = 0;
     end
 end

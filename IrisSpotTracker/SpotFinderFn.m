@@ -32,10 +32,10 @@ function Flecks_flag = SpotFinderFn(section_flecks)
     ssimval = ssim(uint8(upd_result),uint8(flecks));
     
     if(ssimval > 0.999)
-        disp('Flecks Detected.');
+        %disp('Flecks Detected.');
         Flecks_flag = 1;
     else
-        disp('No Flecks Detected.');
+        %disp('No Flecks Detected.');
         Flecks_flag = 0;
     end
 end

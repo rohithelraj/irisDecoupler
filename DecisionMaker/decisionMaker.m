@@ -14,7 +14,7 @@ count = 1;
 central_heterochromia_flag = 0;
 sectoral_heterochromia_flag = 0;
 [iris_actual_nopupil, section_limbalRing, section_flecks, section_collarette, section_stroma, image_name] = ...
-imageDataLoaderMain('no Limbal Ring',1);
+imageDataLoaderMain('contrasting sphincter',13);
 LimbalRing_flag = LimbalRingDetectorFn(section_limbalRing,section_flecks);
 
 
