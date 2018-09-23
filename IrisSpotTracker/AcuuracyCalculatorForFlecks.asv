@@ -1,0 +1,35 @@
+function accuracy = AcuuracyCalculatorForFlecks(possibleFlecksBlobs, comparedRGB, type)
+%ACUURACYCALCULATOR calulates the accuracy of the results obtained by the
+%calling IrirsPropertyDetector method.
+%   Calculates the accuracy based on the RGB value of a selected segment
+%   of an iris section and the RGB value of the compared iris section. A
+%   monochrome comparison is followed by Red, Green, Blue channel based comparison respectively. 
+    accuracy = 0;
+    switch type
+        case 'flecks'
+            bigBlobs = 0;
+            blobAreas = [possibleFlecksBlobs.area];
+            bigBlobs = find(blobAreas > 50);
+            
+            if (bigBlobs)
+                accuracy = 100;
+            elseif(length(blobAreas) > 10)
+                accuracy = 100/length(blobAreas);
+            elseif(length(blobAreas) < 10)
+                accuracy = 100/length(blobAreas);
+            elseif(selectedRGB(1) > selectedRGB(2))
+                if(selectedRGB(2) > selectedRGB(3))
+                    
+                    if((abs(selectedRGB(1) - selectedRGB(2))) > 20)&&((abs(selectedRGB(2) - selectedRGB(1))) >20)
+                        %Brown color detected.
+                        accuracy = 50;
+                    end
+                end    
+            end
+                    
+        otherwise
+            sprintf('Invalid type value in AcuuracyCalculatorForFlecks-> %s'+type);
+    end
+    
+end
+
