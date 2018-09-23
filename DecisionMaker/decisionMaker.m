@@ -21,7 +21,7 @@ LimbalRing_flag = LimbalRingDetectorFn(section_limbalRing,section_flecks);
 central_heterochromia_flag = CentralHeterochromiaDetectorFn(section_flecks,section_collarette);
 sectoral_heterochromia_flag = SectoralHeterochromiaDetectorFn(section_flecks);
 Collarette_flag = collaretteDetectionFn(section_collarette);
-Flecks_flag = SpotFinderFn(section_flecks);
+[Flecks_flag,accuracy_flecks] = SpotFinderFn(section_flecks);
 [accuracy_contrastingSphincter,sphincter_contrast_flag] = ...
 contrastingShincterDetectorFn(section_stroma,section_collarette);
 %anisocoria_flag = AnisocoriaDetectorFn(0.5,pupil_diameter_left,pupil_diameter_right);

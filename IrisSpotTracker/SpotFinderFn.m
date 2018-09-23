@@ -1,7 +1,8 @@
-function Flecks_flag = SpotFinderFn(section_flecks)
+function [Flecks_flag,accuracy] = SpotFinderFn(section_flecks)
 %SPOTFINDERFN Summary of this function goes here
 %   Detailed explanation goes here
     Flecks_flag = 0;
+    accuracy = 0;
     lab_section_flecks = rgb2lab(section_flecks);
     hsv_section_flecks = rgb2hsv(lab_section_flecks);
     rounded_hsv = hsv_section_flecks(:,:,1);
@@ -29,14 +30,36 @@ function Flecks_flag = SpotFinderFn(section_flecks)
     upd_result = im2bw(upd_result,0.1);    
     flecks_input = load('SampleInputSpotTrack\flecks_processing_sample\flecks_sample.mat');
     flecks = getfield(flecks_input,'flecks'); 
-    ssimval = ssim(uint8(upd_result),uint8(flecks));
-    
-    if(ssimval > 0.999)
-        %disp('Flecks Detected.');
-        Flecks_flag = 1;
-    else
-        %disp('No Flecks Detected.');
-        Flecks_flag = 0;
+    blobs = iblobs(upd_result);
+    [outputBlobwithFlecks,flecksFlag] = blobNoiseReduction( blobs, 100, 10 );
+    [FlecksRGBavg(1),FlecksRGBavg(2), FlecksRGBavg(3), Total, count] = ImageRGBColorAverageFinder(section_flecks);
+    if flecksFlag
+        accuracy = AcuuracyCalculatorForFlecks(outputBlobwithFlecks,FlecksRGBavg,'flecks');
     end
+    if(FlecksRGBavg(1) > FlecksRGBavg(2))
+        if(FlecksRGBavg(2) > FlecksRGBavg(3))
+           if((abs(FlecksRGBavg(1) - FlecksRGBavg(2))) > 20)&&((abs(FlecksRGBavg(2) - FlecksRGBavg(1))) >20)
+                %Brown color detected.
+                ssimval = 0.9999;
+           else
+               ssimval = ssim(uint8(upd_result),uint8(flecks));
+           end
+        else
+            ssimval = ssim(uint8(upd_result),uint8(flecks));
+        end 
+    else
+        ssimval = ssim(uint8(upd_result),uint8(flecks));
+    end
+    if ssimval > 0.999
+        if(accuracy >= 50)
+            Flecks_flag = 1;
+
+        else
+            Flecks_flag = 0;
+        end
+    else
+       Flecks_flag = 0;
+    end
+
 end
 
