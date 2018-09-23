@@ -44,7 +44,10 @@ function [sample_image, image_name] = imageDataLoader(type,sample_number)
                     image_name = 'M205029 (V3)withFlecksNeviInhibitedweakAmberGradient';        
                 case 7
                     sample_image = iread('SampleData\NoCollorateSNPatAll\M483878 (V3)InhibitsWeakAmberGradient.jpg');
-                    image_name = 'M483878 (V3)InhibitsWeakAmberGradient';                       
+                    image_name = 'M483878 (V3)InhibitsWeakAmberGradient';         
+                case 8
+                    sample_image = iread('SampleData\NoCollorateSNPatAll\M587800 (V4).jpg');
+                    image_name = 'M587800 (V4)';                                           
                 otherwise
                     disp('Invalid Sample number in imageDataLoader->'+type);
              end

@@ -160,6 +160,14 @@ function [sample_image, image_name, iris_diameter, pupil_diameter, pos_pupil, po
                     pos_pupil = getfield(image, 'result');
                     pos_iris = getfield(image, 'result_iris');                    
                     image_name = 'M623148 (V3)';
+                case 8
+                    image = load('Sample_inputs\with_Limbal_Ring\M587800 (V4).mat'); 
+                    sample_image = getfield(image, 'clean_iris_no_pupil');
+                    iris_diameter = getfield(image, 'box_side_iris');
+                    pupil_diameter = getfield(image, 'box_side');
+                    pos_pupil = getfield(image, 'result');
+                    pos_iris = getfield(image, 'result_iris');                    
+                    image_name = 'M587800 (V4)';                    
                 otherwise
                     disp('Invalid Sample number in imageDataLoader->'+type);
             end

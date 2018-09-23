@@ -160,6 +160,15 @@ function [sample_image, section_limbalRing, section_flecks, section_collarette, 
                     section_collarette = getfield(image, 'section_collarette');
                     section_stroma = getfield(image, 'section_stroma');                   
                     image_name = 'M623148 (V3)';
+                    
+                case 8
+                    image = load('Sample_inputs_prop_detect\with_Limbal_Ring\M587800 (V4).mat'); 
+                    sample_image = getfield(image, 'sample_image');
+                    section_limbalRing = getfield(image, 'section_limbalRing');
+                    section_flecks = getfield(image, 'section_flecks');
+                    section_collarette = getfield(image, 'section_collarette');
+                    section_stroma = getfield(image, 'section_stroma');                   
+                    image_name = 'M587800 (V4)';                    
                 otherwise
                     sprintf('Invalid Sample number in imageDataLoader-> %s'+type);
             end

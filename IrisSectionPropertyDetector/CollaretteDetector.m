@@ -1,5 +1,5 @@
 
-[iris_actual_nopupil, section_limbalRing, section_flecks, section_collarette, section_stroma, image_name]= imageDataLoader('with Limbal Ring',7);
+[iris_actual_nopupil, section_limbalRing, section_flecks, section_collarette, section_stroma, image_name]= imageDataLoader('with Limbal Ring',3);
 %This detection works only with green colored eyes.
 result = section_collarette;
 lab_iris_actual_nopupil = rgb2lab(section_collarette);
