@@ -1,4 +1,4 @@
-[~, ~, section_flecks, ~, ~, image_name] = imageDataLoader('with flecks',12);
+[~, ~, section_flecks, ~, ~, image_name] = imageDataLoader('with flecks',1);
 lab_section_flecks = rgb2lab(section_flecks);
 hsv_section_flecks = rgb2hsv(lab_section_flecks);
 rounded_hsv = hsv_section_flecks(:,:,1);
@@ -50,11 +50,11 @@ end
 if ssimval > 0.999
     if(accuracy >= 50)
     fprintf('Flecks Detected. With an accuracy of -> %d Percentage',accuracy);
-    idisp(upd_result);outputBlobwithFlecks.plot_box;
+    figure,imshow(upd_result), title(sprintf('After H Thresholding: \nMin: %d \nMax: %d \n Structural Similarity Index: %d',minHSVVal,maxHSVVal,ssimval));
     figure,imshow(section_flecks), title('Actual Image');
     %idisp(section_flecks);
     else
-        figure,imshow(upd_result), title(sprintf('After H Thresholding: \nMin: %d \nMax: %d \nStructural Similarity Index: %d',minHSVVal,maxHSVVal,ssimval));
+        figure,imshow(upd_result), title(sprintf('After H Thresholding: \nMin: %d \nMax: %d \n Structural Similarity Index: %d',minHSVVal,maxHSVVal,ssimval));
         figure,imshow(section_flecks), title('Actual Image');
         fprintf('No Flecks Detected. With an accuracy of -> %d Percentage',100-accuracy);
     end

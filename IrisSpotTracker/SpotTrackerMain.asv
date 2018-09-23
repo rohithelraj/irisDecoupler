@@ -1,4 +1,4 @@
-[~, ~, section_flecks, ~, ~, image_name] = imageDataLoader('with flecks',11);
+[~, ~, section_flecks, ~, ~, image_name] = imageDataLoader('with flecks',1);
 lab_section_flecks = rgb2lab(section_flecks);
 hsv_section_flecks = rgb2hsv(lab_section_flecks);
 rounded_hsv = hsv_section_flecks(:,:,1);
@@ -21,17 +21,8 @@ result = zeros(size(section_flecks));
             end
         end 
     end
-if(FlecksRGBavg(1) > FlecksRGBavg(2))
-    if(FlecksRGBavg(2) > FlecksRGBavg(3))
-       if((abs(FlecksRGBavg(1) - FlecksRGBavg(2))) > 20)&&((abs(FlecksRGBavg(2) - FlecksRGBavg(1))) >20)
-            %Brown color detected.
-            ssimval = 0.9999;
-       end
-    end 
-else
-    
-end
-    
+upd_result = rgb2gray(result);   
+upd_result = im2bw(upd_result,0.1);    
 flecks_input = load('SampleInputSpotTrack\flecks_processing_sample\flecks_sample.mat');
 flecks = getfield(flecks_input,'flecks'); 
 %blobsfleck = iblobs(flecks);
@@ -42,12 +33,24 @@ accuracy = 0;
 if flecksFlag
     accuracy = AcuuracyCalculatorForFlecks(outputBlobwithFlecks,FlecksRGBavg,'flecks');
 end
-ssimval = ssim(uint8(upd_result),uint8(flecks));
-
+if(FlecksRGBavg(1) > FlecksRGBavg(2))
+    if(FlecksRGBavg(2) > FlecksRGBavg(3))
+       if((abs(FlecksRGBavg(1) - FlecksRGBavg(2))) > 20)&&((abs(FlecksRGBavg(2) - FlecksRGBavg(1))) >20)
+            %Brown color detected.
+            ssimval = 0.9999;
+       else
+           ssimval = ssim(uint8(upd_result),uint8(flecks));
+       end
+    else
+        ssimval = ssim(uint8(upd_result),uint8(flecks));
+    end 
+else
+    ssimval = ssim(uint8(upd_result),uint8(flecks));
+end
 if ssimval > 0.999
     if(accuracy >= 50)
     fprintf('Flecks Detected. With an accuracy of -> %d Percentage',accuracy);
-    idisp(upd_result);outputBlobwithFlecks.plot_box;
+    figure,imshow(upd_result),title(sprintf('Section Collarette For Comparison \nAccuracy: %d \SSI Value: %d \n',accuracy,ssimval));
     figure,imshow(section_flecks), title('Actual Image');
     %idisp(section_flecks);
     else
