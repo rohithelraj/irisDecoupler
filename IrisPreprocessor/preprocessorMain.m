@@ -1,8 +1,7 @@
 %image data loader argument types -> no Limbal Ring,no collarette with
 %limbal ring, with Limbal Ring, without Limbal Ring and collorate.
-clc
-clear all
-[img,img_name] = imageDataLoader('no collarette with limbal ring',8);
+
+[img,img_name] = imageDataLoader('no collarette with limbal ring',2);
 %gamma correction, used only for detection of the pupil.
 img_gamm = igamm(img, 'sRGB');%gamma correction.
 %Finding Pupil

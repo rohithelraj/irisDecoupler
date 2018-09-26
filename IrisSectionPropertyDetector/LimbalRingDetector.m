@@ -1,4 +1,5 @@
-[iris_actual_nopupil, section_limbalRing, section_flecks, section_collarette, section_stroma, image_name] = imageDataLoader('contrasting sphincter',13);
+clear all;
+[iris_actual_nopupil, section_limbalRing, section_flecks, section_collarette, section_stroma, image_name] = imageDataLoader('no collarette with limbal ring',5);
 %Source - Matlab : https://de.mathworks.com/help/images/examples/color-based-segmentation-using-k-means-clustering.html
 lab_iris_actual_nopupil = rgb2lab(section_limbalRing);
 ab = lab_iris_actual_nopupil(:,:,2:3);

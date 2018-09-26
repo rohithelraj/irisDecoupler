@@ -31,7 +31,7 @@ function [Flecks_flag,accuracy] = SpotFinderFn(section_flecks)
     flecks_input = load('SampleInputSpotTrack\flecks_processing_sample\flecks_sample.mat');
     flecks = getfield(flecks_input,'flecks'); 
     blobs = iblobs(upd_result);
-    [outputBlobwithFlecks,flecksFlag] = blobNoiseReduction( blobs, 100, 10 );
+    [outputBlobwithFlecks,flecksFlag] = blobNoiseReductionSpot( blobs, 100, 10 );
     [FlecksRGBavg(1),FlecksRGBavg(2), FlecksRGBavg(3), Total, count] = ImageRGBColorAverageFinder(section_flecks);
     if flecksFlag
         accuracy = AcuuracyCalculatorForFlecks(outputBlobwithFlecks,FlecksRGBavg,'flecks');

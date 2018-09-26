@@ -1,3 +1,4 @@
+clear all;
 LimbalRing_flag = 0;
 Collarette_flag = 0;
 Flecks_flag = 0;
