@@ -10,27 +10,29 @@ function [HSV_rangeMinVal,HSV_rangeMaxVal,HSV_rangeMinValIndex,HSV_rangeMaxValIn
     HSV_rangeMaxValIndex(1) = 1;
     minCount = 1;
     maxCount = 1;
-    	
-        if(i == 1)
-            HSV_rangeMinVal(minCount) = HSV_zeroVal(i);
-            HSV_rangeMinValIndex(minCount) = HSV_zeroIndex(i);
-            minCount = minCount + 1;
+ for i = 1:maxSize(2)
+    if(i == 1)
+        HSV_rangeMinVal(minCount) = HSV_zeroVal(i);
+        HSV_rangeMinValIndex(minCount) = HSV_zeroIndex(i);
+        minCount = minCount + 1;
 
+    else
+        
+        if(HSV_zeroIndex(i-1) == (HSV_zeroIndex(i) - 1) )
+            continue
         else
-            if(HSV_zeroIndex(i-1) == (HSV_zeroIndex(i) - 1) )
-                continue
-            else
-               HSV_rangeMaxVal(maxCount) = HSV_zeroVal(i);
-               HSV_rangeMaxValIndex(maxCount) = HSV_zeroIndex(i); 
-               maxCount = maxCount + 1;
-               if((i+1)<maxSize(2))
-                    HSV_rangeMinVal(minCount) = HSV_zeroVal(i);
-                    HSV_rangeMinValIndex(minCount) = HSV_zeroIndex(i);
-                    minCount = minCount + 1;
-               end
+            HSV_rangeMaxVal(maxCount) = HSV_zeroVal(i);
+            HSV_rangeMaxValIndex(maxCount) = HSV_zeroIndex(i);
+            maxCount = maxCount + 1;
+            if((i+1)<maxSize(2))
+                HSV_rangeMinVal(minCount) = HSV_zeroVal(i);
+                HSV_rangeMinValIndex(minCount) = HSV_zeroIndex(i);
+                minCount = minCount + 1;
             end
+        end
 
-        end    
     end
+ end
 end
+
 

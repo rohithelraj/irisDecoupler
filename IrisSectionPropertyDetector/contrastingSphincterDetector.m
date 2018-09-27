@@ -1,5 +1,5 @@
 [iris_actual_nopupil, section_limbalRing, section_flecks, section_collarette, section_stroma,...
-    image_name] = imageDataLoader('contrasting sphincter',13);
+    image_name] = imageDataLoader('contrasting sphincter',7);
 idisp({section_stroma,section_collarette,iris_actual_nopupil});
 
 

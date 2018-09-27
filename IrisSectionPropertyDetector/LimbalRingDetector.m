@@ -1,9 +1,10 @@
 clear all;
-[iris_actual_nopupil, section_limbalRing, section_flecks, section_collarette, section_stroma, image_name] = imageDataLoader('no collarette with limbal ring',5);
+[iris_actual_nopupil, section_limbalRing, section_flecks, section_collarette, section_stroma, image_name] = imageDataLoader('without Limbal Ring and collorate',2);
 %Source - Matlab : https://de.mathworks.com/help/images/examples/color-based-segmentation-using-k-means-clustering.html
 lab_iris_actual_nopupil = rgb2lab(section_limbalRing);
 ab = lab_iris_actual_nopupil(:,:,2:3);
 cd = ab;
+LimbalRing_flag = 0;
 nrows = size(ab,1);
 ncols = size(ab,2);
 ab = reshape(ab,nrows*ncols,2);
@@ -41,21 +42,28 @@ title(sprintf('Section Flecks For Comparison \nRed-Avg.: %d \nGreen-Avg.: %d\nBl
 if(count1 > 20)
     if((abs(Total-Total1))>26)
         disp('Limbal Ring Detected');
+        LimbalRing_flag = 1;
     end
 end
+
 if(count2 > 20)
     if((abs(Total-Total2))>26)
         disp('Limbal Ring Detected');
+        LimbalRing_flag = 1;
     end
 end
-if(count3 > 20)
-    if((abs(Total-Total3))>26)
-        disp('Limbal Ring Detected');
+if(~LimbalRing_flag)
+    if(count3 > 20)
+        if((abs(Total-Total3))>26)
+            disp('Limbal Ring Detected');
+            LimbalRing_flag = 1;
+        else
+            disp('No Limbal Ring Detected');
+        end
     else
         disp('No Limbal Ring Detected');
     end
-else
-    disp('No Limbal Ring Detected');
 end
+
 
 
