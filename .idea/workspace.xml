@@ -2,46 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9d3d2bb-9486-4a2d-9c96-0774b1e4ee20" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/DecisionMaker/decisionMaker.m" afterPath="$PROJECT_DIR$/DecisionMaker/decisionMaker.m" />
-      <change beforePath="$PROJECT_DIR$/IrisPreprocessor/preprocessorMain.m" afterPath="$PROJECT_DIR$/IrisPreprocessor/preprocessorMain.m" />
-      <change beforePath="$PROJECT_DIR$/IrisSpotTracker/SpotTrackerMain.asv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/MultiIrisLinearVariationsDetector/HeterochromiaDetectorMain.m" afterPath="$PROJECT_DIR$/MultiIrisLinearVariationsDetector/HeterochromiaDetectorMain.m" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/'M193239 (V3)withflecksneviamber'.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M062327 (V3)multipleStarburstswithFlecksNeviInhibitedAmberGradient.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M071009 (V3)withFlecksNeviInhibitedwithweakambientgradient.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M090800 (V3)withflecksneviinhibitedwithweakambergradient.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M100902(V3)withFlecksNevi.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M111443 (V3).mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M120918 (V3)withMultipleFlecksNevi.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M124950 (V3)withclearflecksNevi.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M134944 (V3)withFlecksNeviinhibitedWithWeakAmbientGradient.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M142748 (V3)withflecksnevi.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M144342 (V3)withFlecksNevi.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M154400 (V3)withFlecksNeviInhibitWeakAmberGradient.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M163349 (V3)withFlecksNevi.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M164039 (V3).mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M180146 (V3)multipleStarburstsWithinhibitedWeakAmberGradient.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M191358 (V3)withflecksnevi.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M193239 (V3)withflecksneviamber.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M198126 (V3).mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M204249 (V3).mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M205029 (V3)withFlecksNeviInhibitedweakAmberGradient.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M221159 (V3).mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M264023 (V3).mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M331051 (V3)withFlecksNeviInhibitsWeakAmberGradient.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M352114 (V3)withFlecksNeviInhibitWeakamberGradient.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M353214 (V3).mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M450776 (V3)withFlecksNeviwithInhibitWeakAmberGradient.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M469379 (V3).mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M483878 (V3)InhibitsWeakAmberGradient.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M545431 (V3)withinhibitweakamberGradient.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M546190 (V3)multipleFlecksNevi.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M571583 (V3).mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M623148 (V3).mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M865571 (V3).mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M880636 (V3).mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M891916 (V3)multipleStarburstswithinhibitedAmbientGradient.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Verification/Data_Outputs/M901542 (V3)withFlecksNEvi.mat" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/IrisSpotTracker/hSVSpotRangeFilter.m" afterPath="$PROJECT_DIR$/IrisSpotTracker/hSVSpotRangeFilter.m" />
+      <change beforePath="$PROJECT_DIR$/Verification/ActualSampleGenerator.m" afterPath="$PROJECT_DIR$/Verification/ActualSampleGenerator.m" />
+      <change beforePath="$PROJECT_DIR$/Verification/VerifyDetections.m" afterPath="$PROJECT_DIR$/Verification/VerifyDetections.m" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -111,13 +74,13 @@
             <path>
               <item name="irisDecoupler" type="b2602c69:ProjectViewProjectNode" />
               <item name="irisDecoupler" type="462c0819:PsiDirectoryNode" />
-              <item name="DecisionMaker" type="462c0819:PsiDirectoryNode" />
+              <item name="Verification" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="irisDecoupler" type="b2602c69:ProjectViewProjectNode" />
               <item name="irisDecoupler" type="462c0819:PsiDirectoryNode" />
-              <item name="DecisionMaker" type="462c0819:PsiDirectoryNode" />
-              <item name="outputs" type="462c0819:PsiDirectoryNode" />
+              <item name="Verification" type="462c0819:PsiDirectoryNode" />
+              <item name="Actual_Data" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -249,12 +212,12 @@
       <updated>1537882973513</updated>
       <workItem from="1537882977855" duration="1283000" />
       <workItem from="1537965012858" duration="340000" />
-      <workItem from="1537966149304" duration="1808000" />
+      <workItem from="1537966149304" duration="5425000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3431000" />
+    <option name="totallyTimeSpent" value="7048000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="4603" height="2503" extended-state="6" />

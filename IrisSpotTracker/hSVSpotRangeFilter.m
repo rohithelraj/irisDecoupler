@@ -10,7 +10,7 @@ function [HSV_rangeMinVal,HSV_rangeMaxVal,HSV_rangeMinValIndex,HSV_rangeMaxValIn
     HSV_rangeMaxValIndex(1) = 1;
     minCount = 1;
     maxCount = 1;
-    for i = 1:maxSize(2)
+    	
         if(i == 1)
             HSV_rangeMinVal(minCount) = HSV_zeroVal(i);
             HSV_rangeMinValIndex(minCount) = HSV_zeroIndex(i);
