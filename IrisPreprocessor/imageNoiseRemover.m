@@ -8,6 +8,9 @@ function [resultant,iris_actual] = imageNoiseRemover(input_image,noiser)
     noise_removal_sample = noiser;
 
     lab_noise_removal_sample = rgb2lab(noise_removal_sample);
+    %   Source used for k- means clustering - Matlab : https://de.mathworks.com/help/images/examples/color-based-segmentation-using-k-means-clustering.htmllab_iris_actual_nopupil = rgb2lab(section_limbalRing);
+    %Inspired by source- Start
+
     ab = lab_noise_removal_sample(:,:,2:3);
     cd=ab;
     nrows = size(ab,1);
@@ -23,7 +26,7 @@ function [resultant,iris_actual] = imageNoiseRemover(input_image,noiser)
         color(rgb_label ~= k) = 0;
         segmented_images{k} = color;
     end
-
+    %Inspired by source- End
     noiseless_iris_section1 = segmented_images{1};
     noiseless_iris_section2 = segmented_images{2};
     noiseless_iris_section = rgb2gray(segmented_images{3});

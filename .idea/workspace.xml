@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9d3d2bb-9486-4a2d-9c96-0774b1e4ee20" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/DecisionMaker/decisionMaker.m" afterPath="$PROJECT_DIR$/DecisionMaker/decisionMaker.m" />
-      <change beforePath="$PROJECT_DIR$/DecisionMaker/imageDataLoaderMain.m" afterPath="$PROJECT_DIR$/DecisionMaker/imageDataLoaderMain.m" />
-      <change beforePath="$PROJECT_DIR$/Verification/ActualSampleGenerator.m" afterPath="$PROJECT_DIR$/Verification/ActualSampleGenerator.m" />
-      <change beforePath="$PROJECT_DIR$/Verification/VerifyDetections.m" afterPath="$PROJECT_DIR$/Verification/VerifyDetections.m" />
-    </list>
+    <list default="true" id="d9d3d2bb-9486-4a2d-9c96-0774b1e4ee20" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -284,16 +279,15 @@
       <workItem from="1537882977855" duration="1283000" />
       <workItem from="1537965012858" duration="340000" />
       <workItem from="1537966149304" duration="10581000" />
-      <workItem from="1538315002033" duration="9921000" />
+      <workItem from="1538315002033" duration="9960000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22125000" />
+    <option name="totallyTimeSpent" value="22164000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-12" y="-12" width="3224" height="1754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
