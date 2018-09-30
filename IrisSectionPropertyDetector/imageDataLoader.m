@@ -1,7 +1,15 @@
 function [sample_image, section_limbalRing, section_flecks, section_collarette, section_stroma, image_name] = imageDataLoader(type,sample_number)
-%IMAGEDATALOADER Summary of this function goes here
-%   install Robotics toolbox 10.2
-%   Then Machine vision Toolbox 4.1
+%IMAGEDATALOADER Used to load sample data from the source folder.
+%   Arguments: type-> accepts strings 'no limbal Ring','no collarette with limbal ring', 'with Limbal Ring' , 'without Limbal Ring and collorate', 'contrasting sphincter'.
+%                     Describes the sample containing a specific phenotype.
+%               sample_number -> numeric value for 'no limbal Ring'; 1 to 4 works, for 'no collarette with limbal ring'; 1 to 8 works, for 'with Limbal Ring'; 1 to 7 works
+%                               , for 'without Limbal Ring and collorate'; 1 to 8 works, , for 'contrasting sphincter'; 1 to 13 works.
+%   Returns: sample_image -> the sample image in RGB.
+%            image_name -> the name of the image.
+%            section_limbalRing -> the section of iris where Limbal ring is to be found.
+%            section_flecks -> the section of iris where Flecks is to be found.
+%            section_collarette -> the section of iris where collarette is to be found.
+%            section_stroma -> the section of iris where contrasting sphincter is to be found is to be found.
 
     switch type
         case 'no Limbal Ring'

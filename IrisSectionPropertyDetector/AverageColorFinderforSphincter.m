@@ -1,6 +1,11 @@
 function [Ravg,Gavg, Bavg, Total, count] = AverageColorFinderforSphincter(image)
-%AVERAGECOLORFINDERFORSPHINCTER Summary of this function goes here
-%   Detailed explanation goes here
+%AVERAGECOLORFINDERFORSPHINCTER Finds the average RGB and Monochrome colour values for an image, excluding the dark pixels( zeros )
+%   Arguments: image -> The input RGB image.
+%   Return: Ravg -> The average Red value.
+%           Gavg -> The average Blue value.
+%           Bavg -> The average Green value.
+%           Total -> The average Monochrome value.
+%           count -> the count of non zero pixels.
     [rows,columns,noChannels] = size(image);
     if(noChannels == 3) 
         Ravg = double(0);

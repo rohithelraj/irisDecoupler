@@ -1,7 +1,9 @@
+%This main function is used to detect Limbal Ring in an iris limbal ring section
+
 clear all;
 [iris_actual_nopupil, section_limbalRing, section_flecks, section_collarette, section_stroma, image_name] = imageDataLoader('without Limbal Ring and collorate',2);
-%Source - Matlab : https://de.mathworks.com/help/images/examples/color-based-segmentation-using-k-means-clustering.html
-lab_iris_actual_nopupil = rgb2lab(section_limbalRing);
+%   Source used for k- means clustering - Matlab : https://de.mathworks.com/help/images/examples/color-based-segmentation-using-k-means-clustering.htmllab_iris_actual_nopupil = rgb2lab(section_limbalRing);
+%Inspired by source- Start
 ab = lab_iris_actual_nopupil(:,:,2:3);
 cd = ab;
 LimbalRing_flag = 0;
@@ -19,12 +21,7 @@ for k = 1:nColors
     color(rgb_label ~= k) = 0;
     segmented_images{k} = color;
 end
-
-% figure,imshow(segmented_images{4}), title('objects in cluster 4');  
-% figure,imshow(segmented_images{5}), title('objects in cluster 5');
-% figure,imshow(segmented_images{6}), title('objects in cluster 6');
-% figure,imshow(segmented_images{7}), title('objects in cluster 7');
-% figure,imshow(segmented_images{8}), title('objects in cluster 8');
+%Inspired by source- End
 [RGB1(1),RGB1(2), RGB1(3), Total1 , count1] = ImageRGBColorAverageFinder(segmented_images{1});
 [RGB2(1),RGB2(2), RGB2(3), Total2, count2] = ImageRGBColorAverageFinder(segmented_images{2});
 [RGB3(1),RGB3(2), RGB3(3), Total3, count3] = ImageRGBColorAverageFinder(segmented_images{3});

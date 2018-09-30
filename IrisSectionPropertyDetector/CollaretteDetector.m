@@ -1,6 +1,6 @@
-
+%This main function is used to detect collarette in an iris collarette section
 [iris_actual_nopupil, section_limbalRing, section_flecks, section_collarette, section_stroma, image_name]= imageDataLoader('contrasting sphincter',13);
-%This detection works only with green colored eyes.
+
 result = section_collarette;
 lab_iris_actual_nopupil = rgb2lab(section_collarette);
 hsv = rgb2hsv(lab_iris_actual_nopupil);
@@ -41,10 +41,6 @@ colatrette = load('Sample_inputs_prop_detect\collarate_processing_sample\collare
 collarette_amber = getfield(colatrette,'collarette_amber');    
 ssimval = ssim(uint8(upd_result),uint8(collarette_amber));
 
-%binaryImage_iris_compl = imcomplement(binaryImage_iris);
-%detections = iblobs(collarette_amber);
-%[outputBlob,blobCount] = blobNoiseReduction( detections, 1000 , 10 );
-%figure,imshow(detect_collarete), title('Existing Probable Collarette Section');  
 figure,imshow(result), title(sprintf('After H Thresholding: \nMin: %d \nMax: %d \nStructural Similarity Index: %d',MinRange,MaxRange,ssimval));
 figure,imshow(section_collarette), title('Actual Image');
 if(ssimval > 0.999)

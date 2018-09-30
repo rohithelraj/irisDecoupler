@@ -1,3 +1,4 @@
+%This main function generates the collarette mask form a sample data, by using predetermined thresholding values
 image = load('Sample_inputs_prop_detect\collarate_processing_sample\M193239.mat');
 sample_image = getfield(image, 'result');
 [rows,columns,noChannels] = size(sample_image);

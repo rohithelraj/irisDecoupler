@@ -1,5 +1,7 @@
 function [RangeHSV_min_upd,RangeHSV_max_upd,CountHSV_min_upd,CountHSV_max_upd] = hSVRangeFinder(hsvCounts,hsvValues)
 %HSVRANGEFINDER Summary of this function goes here
+%   Computes all the ranges, that provide best possiblities to be a
+%   collorette section.
 %   mechanism to find the range
     counter_range = 1;
     first_flag = 0;

@@ -1,6 +1,8 @@
 function Collarette_flag = collaretteDetectionFn(section_collarette)
-%COLLARETTEDETECTIONFN Summary of this function goes here
-%   Detailed explanation goes here
+%COLLARETTEDETECTIONFN detects collarette in a provided section_collarette
+%   Return: Collarette_flag -> Boolean variable that marks the existance of Collarette in a collarette section.
+%   Argument: section_collarette -> Collarette section of an iris.
+
     Collarette_flag = 0;
     result = section_collarette;
     lab_iris_actual_nopupil = rgb2lab(section_collarette);

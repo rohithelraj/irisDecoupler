@@ -1,9 +1,13 @@
 function LimbalRing_flag = LimbalRingDetectorFn(section_limbalRing,section_flecks)
-%LIMBALRINGDETECTORFN Summary of this function goes here
-%   Detailed explanation goes here
-%Source - Matlab : https://de.mathworks.com/help/images/examples/color-based-segmentation-using-k-means-clustering.html
+%LIMBALRINGDETECTORFN detects Limbal Ring in a provided section_limbalRing
+%   Return: LimbalRing_flag -> Boolean variable that marks the existance of Limbal Ring in a Limbal Ring section.
+%   Argument: section_limbalRing -> Limbal Ring section of an iris.
+%             section_flecks -> Flecks section of an iris.
+%   Source used for k- means clustering - Matlab : https://de.mathworks.com/help/images/examples/color-based-segmentation-using-k-means-clustering.html
+
     LimbalRing_flag = 0;
     lab_iris_actual_nopupil = rgb2lab(section_limbalRing);
+    %Inspired by source- Start
     ab = lab_iris_actual_nopupil(:,:,2:3);
     cd=ab;
     nrows = size(ab,1);
@@ -12,7 +16,6 @@ function LimbalRing_flag = LimbalRingDetectorFn(section_limbalRing,section_fleck
     nColors = 3;
     [cluster_idx, cluster_center] = kmeans(ab,nColors,'distance','sqEuclidean','Replicates',3);
     pixel_labels = reshape(cluster_idx,nrows,ncols);
-    % figure,imshow(pixel_labels,[]), title('image labeled by cluster index');
     segmented_images = cell(1,3);
     rgb_label = repmat(pixel_labels,[1 1 3]);
     for k = 1:nColors
@@ -20,6 +23,7 @@ function LimbalRing_flag = LimbalRingDetectorFn(section_limbalRing,section_fleck
         color(rgb_label ~= k) = 0;
         segmented_images{k} = color;
     end
+    %Inspired by source- End
     [RGB1(1),RGB1(2), RGB1(3), Total1 , count1] = ImageRGBColorAverageFinder(segmented_images{1});
     [RGB2(1),RGB2(2), RGB2(3), Total2, count2] = ImageRGBColorAverageFinder(segmented_images{2});
     [RGB3(1),RGB3(2), RGB3(3), Total3, count3] = ImageRGBColorAverageFinder(segmented_images{3});

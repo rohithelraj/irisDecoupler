@@ -1,7 +1,10 @@
 function [RangeWiseCount] = hSVRangeWiseCountFinder(RangeHSV_min,RangeHSV_max,hsvCounts,hsvValues)
-%HSVRANGEFILTER Summary of this function goes here
-%   Computes all the ranges, that provide best possiblities to be a
-%   collorette section.
+%HSVRANGEFILTER Computes the range wise count.
+%   Return: RangeWiseCount -> The number of pixels in a in a range.
+%   Arguments: RangeHSV_min -> The minimum range values array.
+%              RangeHSV_max -> The maximum range values array.
+%              hsvCounts -> The number of pixels with in a histogram intensity.
+%              hsvValues -> The histogram intensity value.
     HSV_size = size(hsvCounts);
     Range_size = size(RangeHSV_min);
     RangeWiseCount = zeros(1,Range_size(2));

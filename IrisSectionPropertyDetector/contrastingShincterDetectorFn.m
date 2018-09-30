@@ -1,6 +1,9 @@
 function [accuracy,contrastingSphincterFlag] = contrastingShincterDetectorFn(section_stroma,section_collarette)
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+%CONTRASTINGSPHINCTERDETECTORFN detects contrasting sphincter in a provided section_stroma
+%   Return: contrastingSphincterFlag -> Boolean variable that marks the existance of Contrasting Sphincter in a stroma section.
+%           accuracy -> Accuracy of the computed detection in percentage.
+%   Argument: section_collarette -> Collarette section of an iris.
+%             section_stroma -> Stroma section of an iris.
     lab_iris_actual_nopupil = rgb2lab(section_stroma);
     ab = lab_iris_actual_nopupil(:,:,2:3);
     accuracy = 0;

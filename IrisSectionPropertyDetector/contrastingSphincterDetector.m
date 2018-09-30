@@ -1,3 +1,5 @@
+%This main function is used to detect contrasting sphincter in an iris stroma section
+
 [iris_actual_nopupil, section_limbalRing, section_flecks, section_collarette, section_stroma,...
     image_name] = imageDataLoader('contrasting sphincter',7);
 idisp({section_stroma,section_collarette,iris_actual_nopupil});
@@ -12,7 +14,6 @@ ab = reshape(ab,nrows*ncols,2);
 nColors = 3;
 [cluster_idx, cluster_center] = kmeans(ab,nColors,'distance','sqEuclidean','Replicates',3);
 pixel_labels = reshape(cluster_idx,nrows,ncols);
-% figure,imshow(pixel_labels,[]), title('image labeled by cluster index');
 segmented_images = cell(1,3);
 rgb_label = repmat(pixel_labels,[1 1 3]);
 for k = 1:nColors
@@ -20,7 +21,6 @@ for k = 1:nColors
     color(rgb_label ~= k) = 0;
     segmented_images{k} = color;
 end
-%idisp({segmented_images{1},segmented_images{2},segmented_images{3},iris_actual_nopupil});
  [Avg_stromaRGB(1,1),Avg_stromaRGB(2,1), Avg_stromaRGB(3,1), Total_stroma(1,1) , ...
      count_stroma1] = AverageColorFinderforSphincter(segmented_images{1});
  [Avg_stromaRGB(1,2),Avg_stromaRGB(2,2), Avg_stromaRGB(3,2), Total_stroma(1,2) , ...
