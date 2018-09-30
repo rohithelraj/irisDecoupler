@@ -1,6 +1,19 @@
 function [image_name, sample_image, iris_diameter, pupil_diameter, pos_pupil, pos_iris, section_limbalRing, section_flecks, section_collarette, section_stroma] = irisSectionRetriever(sampleType,id)
-%IRISSECTIONRETRIEVER Summary of this function goes here
-%   Detailed explanation goes here
+%IRISSECTIONRETRIEVER Used to split the iris into four different sections.
+%   Arguments: sampleType-> accepts strings 'no limbal Ring','no collarette with limbal ring', 'with Limbal Ring' , 'without Limbal Ring and collorate', 'contrasting sphincter'.
+%                     Describes the sample containing a specific phenotype.
+%               id -> numeric value for 'no limbal Ring'; 1 to 4 works, for 'no collarette with limbal ring'; 1 to 8 works, for 'with Limbal Ring'; 1 to 7 works
+%                               , for 'without Limbal Ring and collorate'; 1 to 8 works, , for 'contrasting sphincter'; 1 to 13 works.
+%   Returns: sample_image -> the sample image in RGB.
+%            image_name -> the name of the image.
+%            iris_diameter -> the diameter of the iris.
+%            pupil_diameter -> the diameter of the pupil.
+%            pos_pupil -> the position of the pupil.
+%            pos_iris -> the position of the iris.
+%            section_limbalRing -> the section of iris where Limbal ring is to be found.
+%            section_flecks -> the section of iris where Flecks is to be found.
+%            section_collarette -> the section of iris where collarette is to be found.
+%            section_stroma -> the section of iris where contrasting sphincter is to be found is to be found.
     [sample_image, image_name, iris_diameter, pupil_diameter, pos_pupil, pos_iris] = imageDataLoader(sampleType,id);
 
 
