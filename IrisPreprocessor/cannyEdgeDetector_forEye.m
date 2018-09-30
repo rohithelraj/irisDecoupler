@@ -1,6 +1,6 @@
 function cannyImageOutput = cannyEdgeDetector_forEye(image)
-%CANNYEDGEDETECTOR_FORPUPIL Summary of this function goes here
-%   Detailed explanation goes here
+%CANNYEDGEDETECTOR_FORPUPIL returns the edge detected output, edge detection using Canny Edge detection algorithm.
+%   Argument: image -> RGB image.
 gray = rgb2gray(image);
 cannyImageOutput = edge(gray,'Canny');
 

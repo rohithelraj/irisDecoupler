@@ -1,6 +1,8 @@
 function tracedIris = TraceCompleter(iris)
-%TRACECOMPLETER Summary of this function goes here
-%   Detailed explanation goes here
+% TRACECOMPLETER Paints the entire iris in white, used to create iris mask.
+% Argument: iris -> iris border trace.
+% Return: tracedIris -> the iris mask.
+%
   tracedIris = iris;
   for y = 1:200
     x_detect_flag_front = 0;

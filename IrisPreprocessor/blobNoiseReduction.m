@@ -1,6 +1,8 @@
 function [outputBlob,flag] = blobNoiseReduction( blob, high , low )
-%BLOBNOISEREDUCTION Summary of this function goes here
-%   Detailed explanation goes here
+%BLOBNOISEREDUCTION Removes unwanted blobs.
+%   By filtering out the blobs outside an area range.
+%   Arguments: blob -> blobs generated using iblobs. low ->numeric value, low area threshold. high -> numeric value, high area threshold, must be greater than low.
+%   It also returns a flag that notifies existance of bolobs between the specified areas.
 flag = 0;
 blobAreas = [blob.area];
 max_area = 0;

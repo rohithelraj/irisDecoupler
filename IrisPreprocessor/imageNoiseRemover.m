@@ -1,6 +1,10 @@
 function [resultant,iris_actual] = imageNoiseRemover(input_image,noiser)
-    %IMAGENOISEREMOVER Summary of this function goes here
-    %   Detailed explanation goes here
+    %IMAGENOISEREMOVER removes the noise from the iris image.
+    %   Arguments: input_image -> Input iris image.
+    %              noiser -> The sample image used for generating the noise removal mask, this image generates the noise mask at cluster 3, on performing
+    %                        K- Means clusterning with k value 3 and iteration numer 3.
+    %   Returns: resultant -> The monochrome noise mask.
+    %            iris_actual -> The noise removed iris input, the final output of preprocessing.
     noise_removal_sample = noiser;
 
     lab_noise_removal_sample = rgb2lab(noise_removal_sample);

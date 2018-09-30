@@ -7,7 +7,7 @@ function irisCoordinates = findIrisCoordinates(pupilPoint,centroid,radii_spatial
 %                 |
 %                 |
 %                 |
-%        |E|      |
+%        |E|      |      
 %                |A|
 %                 |
 %                 |

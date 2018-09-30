@@ -1,5 +1,13 @@
 function [iris,standard_count,plus_count,minus_count,plus_count_2,minus_count_2] = irisRetriever(edgeInput,pupil)
-%IRISRETRIEVER Summary of this function goes here
+%IRISRETRIEVER retrieves the border of the iris.
+%   Arguments: edgeInput-> monochrome input, canny edge detected eye.
+%              pupil -> monochome input, canny edge detected pupil.
+%   Returns:  iris -> monochrome iris border trace
+%             standard_count -> detections in predicted position by findIrisCoordinates and at the points a, d, r, i.
+%             plus_count -> detections in predicted position+1 by findIrisCoordinates and at the points a+1, d+1, r+1, i+1.
+%             minus_count -> detections in predicted position-1 by findIrisCoordinates and at the points a-1, d-1, r-1, i-1.
+%             plus_count_2 -> detections in predicted position+2 by findIrisCoordinates and at the points a+2, d+2, r+2, i+2.
+%             minus_count_2 -> detections in predicted position-2 by findIrisCoordinates and at the points a-2, d-2, r-2, i-2.
 %   Pupil Section of the Eye.
 % (1,1)        (200,1)               (400,1)
 %                |B|
@@ -13,7 +21,7 @@ function [iris,standard_count,plus_count,minus_count,plus_count_2,minus_count_2]
 % (1,200)     (201,200)              (400,200)
 % Determining the outer rim of the iris.
 %                     |
-%                    |ß|
+%                    |ï¿½|
 %    |L|         .    |             |z|
 %                 .   |
 %                 | . |
@@ -24,7 +32,7 @@ function [iris,standard_count,plus_count,minus_count,plus_count_2,minus_count_2]
 %                     |
 %                     |
 %                     |
-%    |€|              |             |n|
+%    |ï¿½|              |             |n|
 %                    |a|
 %                     |
 
