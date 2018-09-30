@@ -1,5 +1,5 @@
     lab_noise_removal_sample = rgb2lab(clean_iris_no_pupil);
-    %   Source used for k- means clustering - Matlab : https://de.mathworks.com/help/images/examples/color-based-segmentation-using-k-means-clustering.htmllab_iris_actual_nopupil = rgb2lab(section_limbalRing);
+    %Source used for k- means clustering - Matlab : https://de.mathworks.com/help/images/examples/color-based-segmentation-using-k-means-clustering.htmllab_iris_actual_nopupil = rgb2lab(section_limbalRing);
     %Inspired by source- Start
     ab = lab_noise_removal_sample(:,:,2:3);
     cd=ab;
