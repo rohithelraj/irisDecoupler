@@ -1,5 +1,5 @@
 
-[iris_actual_nopupil, section_limbalRing, section_flecks, section_collarette, section_stroma, image_name]= imageDataLoader('with Limbal Ring',6);
+[iris_actual_nopupil, section_limbalRing, section_flecks, section_collarette, section_stroma, image_name]= imageDataLoader('contrasting sphincter',13);
 %This detection works only with green colored eyes.
 result = section_collarette;
 lab_iris_actual_nopupil = rgb2lab(section_collarette);
@@ -10,12 +10,6 @@ rounded_hsv = hsv(:,:,1);
 [M,I] = max(hsvCounts);
 sortedCounts = sort(hsvCounts,'descend');
 count_size = size(hsvCounts);
-% Peak = hsvValues(I);
-% for i = 1:count_size(1)
-%     if(sortedCounts(41) == hsvCounts(i))
-%         Peak = hsvValues(i);
-%     end
-% end
 
 [RangeHSV_min,RangeHSV_max,CountHSV_min,CountHSV_max] = hSVRangeFinder(hsvCounts,hsvValues);
 [RangeWiseCount] = hSVRangeWiseCountFinder(RangeHSV_min,RangeHSV_max,hsvCounts,hsvValues);

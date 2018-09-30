@@ -1,7 +1,7 @@
 %image data loader argument types -> no Limbal Ring,no collarette with
 %limbal ring, with Limbal Ring, without Limbal Ring and collorate.
 
-[img,img_name] = imageDataLoader('no collarette with limbal ring',2);
+[img,img_name] = imageDataLoader('contrasting sphincter',13);
 %gamma correction, used only for detection of the pupil.
 img_gamm = igamm(img, 'sRGB');%gamma correction.
 %Finding Pupil
@@ -22,22 +22,15 @@ if (pupilFlag == 1)
      [row,col]=find(binaryImage);
      PupilPixels = [row,col];
      img_nopupil = (uint8(rgbImage)*255) + img;
-     %figure,imshow(imageDataLoader('no collarette with limbal ring',6));
-     
-     %RGB values of the detected pupil.
-     %RGBpixels=impixel(img_nopupil,col,row);
-     %Doing canny edge detection.
-     edged_canny_image = cannyEdgeDetector_forEye(img_nopupil); 
+     edged_canny_image = cannyEdgeDetector_forEye(img_nopupil);
      edged_pupil_image = cannyEdgeDetector_forEye(uint8(rgbImage)); 
-     
      [iris,standard_count,plus_count,minus_count,plus_count_2,minus_count_2] = irisRetriever(edged_canny_image,edged_pupil_image);
      rgbImage_iris = cat(3, iris, iris, iris);
      edged_canny_iris = cannyEdgeDetector_forEye(uint8(rgbImage_iris));
      %recursive call of trace completer, 6 times.
      tracedIris = TraceCompleter(TraceCompleter(TraceCompleter(TraceCompleter(TraceCompleter(TraceCompleter(iris))))));
      
-     %figure,imshow(tracedIris);
-     %title(sprintf('TraceCompleter: with Limbal Ring \n %s',img_name));
+
      tracedIris_blobs = iblobs(tracedIris,'boundary');
      [tracedIris_blobs_up,irisFlag] = blobNoiseReduction(tracedIris_blobs,30000,15000);
      if(irisFlag == 1)
@@ -48,12 +41,10 @@ if (pupilFlag == 1)
         %For distinguishing color variations.
         hEllipse_iris = imellipse(gca,[result_iris(1) result_iris(2) box_side_iris box_side_iris]);
         %For non distinguishing color variations.
-        %hEllipse_iris = imellipse(gca,[result_iris(1) result_iris(2) box_side_iris box_side_iris]);
         binaryImage_iris = hEllipse_iris.createMask();
         binaryImage_iris_compl = imcomplement(binaryImage_iris);
         title(sprintf('Iris Trace: with Limbal Ring \n %s \n Counts: Plus> %d Minus> %d Standard> %d Plus2> %d Minus2> %d',img_name,plus_count,minus_count,standard_count,plus_count_2,minus_count_2));
-       % figure,imshow(imageDataLoader('no collarette with limbal ring',6));
-       
+
         rgbImage_iris = cat(3, binaryImage_iris_compl, binaryImage_iris_compl, binaryImage_iris_compl);
         iris_actual =  (uint8(rgbImage_iris)*255) + img;
         %binaryImage_pupil_compl = imcomplement(binaryImage);
