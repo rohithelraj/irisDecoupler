@@ -1,6 +1,8 @@
 function [Flecks_flag,accuracy] = SpotFinderFn(section_flecks)
-%SPOTFINDERFN Summary of this function goes here
-%   Detailed explanation goes here
+%SPOTFINDERFN detects Flecks in a provided section_flecks
+              %   Return: Flecks_flag -> Boolean variable that marks the existance of Flecks in a Flecks section.
+              %           accuracy -> Accuracy of the computed detection in percentage.
+              %   Argument: section_flecks -> Flecks section of an iris.
     Flecks_flag = 0;
     accuracy = 0;
     lab_section_flecks = rgb2lab(section_flecks);

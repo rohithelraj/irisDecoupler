@@ -1,3 +1,5 @@
+%This main function is used to detect flecks in an iris flecks section
+
 [iris_actual_nopupil, ~, section_flecks, ~, ~, image_name] = imageDataLoader('with flecks',3);
 lab_section_flecks = rgb2lab(section_flecks);
 hsv_section_flecks = rgb2hsv(lab_section_flecks);

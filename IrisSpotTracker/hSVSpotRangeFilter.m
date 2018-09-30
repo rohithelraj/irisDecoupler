@@ -1,7 +1,12 @@
 function [HSV_rangeMinVal,HSV_rangeMaxVal,HSV_rangeMinValIndex,HSV_rangeMaxValIndex] = hSVSpotRangeFilter(HSV_zeroVal,HSV_zeroIndex)
-%HSVRANGEFILTER Summary of this function goes here
-%   Filers the best ranges that havve the possibilies to be a collarette
-%   section.
+%HSVRANGEFILTER Finds all the ranges separated by zeros
+                %   Computes all the ranges in a histogram, that have  continiously non zero data points(non zeros at intensity).
+                %   Arguments: HSV_zeroVal -> the zero intensity values array.
+                 %           HSV_zeroIndex -> the array of zero intensity value's index in hsvValues array.
+                %   Return: HSV_rangeMinVal -> The minimum  range values array.
+                %           HSV_rangeMaxVal -> The maximum  range values array.
+                %           HSV_rangeMinValIndex -> The index in hsvValues array.
+                %           HSV_rangeMaxValIndex -> The index in hsvValues array.
     maxSize = size(HSV_zeroVal);
     HSV_rangeMinVal(1) = 0.0000;
     HSV_rangeMaxVal(1) = 0.0000;

@@ -1,8 +1,12 @@
 function [RangeHSV_min_upd,RangeHSV_max_upd,CountHSV_min_upd,CountHSV_max_upd] = hSVRangeFinder(hsvCounts,hsvValues)
-%HSVRANGEFINDER Summary of this function goes here
-%   Computes all the ranges, that provide best possiblities to be a
-%   collorette section.
-%   mechanism to find the range
+%HSVRANGEFINDER Finds all the ranges separated by zeros
+%   Computes all the ranges in a histogram, that have  continiously non zero data points(non zeros at intensity).
+%   Arguments: hsvCounts -> array of the number of pixels with in  histogram intensity .
+%              hsvValues -> array of the histogram intensity value.
+%   Return: RangeHSV_min_upd -> The minimum  range values array.
+%           RangeHSV_max_upd -> The maximum  range values array.
+%           CountHSV_min_upd -> The pixel count at minimum  range values array.
+%           CountHSV_max_upd -> The pixel count at maximum  range values array.
     counter_range = 1;
     first_flag = 0;
     count_size = size(hsvCounts);

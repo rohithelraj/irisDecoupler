@@ -1,6 +1,6 @@
 function accuracy = AcuuracyCalculatorForFlecks(possibleFlecksBlobs,FlecksRGBavg, type)
 %ACUURACYCALCULATOR calulates the accuracy of the results obtained by the
-%calling IrirsPropertyDetector method.
+% calling IrirsPropertyDetector method.
 %   Calculates the accuracy based on the RGB value of a selected segment
 %   of an iris section and the RGB value of the compared iris section. A
 %   monochrome comparison is followed by Red, Green, Blue channel based comparison respectively. 
