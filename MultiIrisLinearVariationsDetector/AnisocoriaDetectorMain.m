@@ -1,3 +1,4 @@
+%detects anisocoria in a provided eye pair
 [~, ~, ~, ~, ~, ~, pupil_diameter_left,...
     ~, ~, ~, ~, ~, ~, pupil_diameter_right] = imageDataLoader('anisocoria',1);
 anisocoria_threshold = 0.5;

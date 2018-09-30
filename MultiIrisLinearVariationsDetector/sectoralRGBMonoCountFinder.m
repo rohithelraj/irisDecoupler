@@ -1,6 +1,5 @@
 function     [RCount ,GCount , BCount , MCount] = sectoralRGBMonoCountFinder(RGB_flecks,Total_flecks,image)
-%SECTORALRGBMONOCOUNTFINDER Summary of this function goes here
-%   Detailed explanation goes here
+%SECTORALRGBMONOCOUNTFINDER Incomplete-------
         RCount = 0;
         GCount = 0;
         BCount = 0;

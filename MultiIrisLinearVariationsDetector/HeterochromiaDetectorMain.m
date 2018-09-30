@@ -1,3 +1,4 @@
+%detects central heterochromia in a provided section_collarette
 [sample_image_left, ~, section_flecks_left, section_collarette_left, section_stroma_left, image_name_left, ~,...
     sample_image_right, ~, section_flecks_right, section_collarette_right, section_stroma_right, image_name_right, ~] = imageDataLoader('complete heterochromia',2);
 

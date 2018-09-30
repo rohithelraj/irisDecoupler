@@ -1,9 +1,23 @@
 function [sample_image_left, section_limbalRing_left, section_flecks_left, section_collarette_left, section_stroma_left, image_name_left, pupil_diameter_left,...
     sample_image_right, section_limbalRing_right, section_flecks_right, section_collarette_right, section_stroma_right, image_name_right, pupil_diameter_right] = imageDataLoader(type,sample_number)
-%IMAGEDATALOADER Summary of this function goes here
-%   install Robotics toolbox 10.2
-%   Then Machine vision Toolbox 4.1
-
+%IMAGEDATALOADER Used to load sample data from the source folder.
+%   Arguments: type-> accepts strings 'anisocoria','complete heterochromia'.
+%                     Describes the sample containing a specific phenotype, in this with or without flecks.
+%              sample_number -> numeric value for 'anisocoria'; 1 works, for 'complete heterochromia'; 1 to 4 works.
+%   Returns: sample_image_left -> the sample image in RGB.
+%            image_name_left -> the name of the image.
+%            section_limbalRing_left -> the section of iris where Limbal ring is to be found.
+%            section_flecks_left -> the section of iris where Flecks is to be found.
+%            section_collarette_left -> the section of iris where collarette is to be found.
+%            section_stroma_left -> the section of iris where contrasting sphincter is to be found is to be found.
+%            pupil_diameter_left -> the pupil_diameter_left of iris gives the diametric value of the pupil.
+%            sample_image_right -> the sample image in RGB.
+%            image_name_right -> the name of the image.
+%            section_limbalRing_right -> the section of iris where Limbal ring is to be found.
+%            section_flecks_right -> the section of iris where Flecks is to be found.
+%            section_collarette_right -> the section of iris where collarette is to be found.
+%            section_stroma_right -> the section of iris where contrasting sphincter is to be found is to be found.
+%            pupil_diameter_right -> the pupil_diameter_left of iris gives the diametric value of the pupil.
     switch type
         case 'anisocoria'
             switch sample_number
