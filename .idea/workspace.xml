@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9d3d2bb-9486-4a2d-9c96-0774b1e4ee20" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/MultiIrisLinearVariationsDetector/AnisocoriaDetectorFn.m" afterPath="$PROJECT_DIR$/MultiIrisLinearVariationsDetector/AnisocoriaDetectorFn.m" />
-      <change beforePath="$PROJECT_DIR$/MultiIrisLinearVariationsDetector/AnisocoriaDetectorMain.m" afterPath="$PROJECT_DIR$/MultiIrisLinearVariationsDetector/AnisocoriaDetectorMain.m" />
-      <change beforePath="$PROJECT_DIR$/MultiIrisLinearVariationsDetector/CentralHeterochromiaDetectorFn.m" afterPath="$PROJECT_DIR$/MultiIrisLinearVariationsDetector/CentralHeterochromiaDetectorFn.m" />
-      <change beforePath="$PROJECT_DIR$/MultiIrisLinearVariationsDetector/HeterochromiaDetectorMain.m" afterPath="$PROJECT_DIR$/MultiIrisLinearVariationsDetector/HeterochromiaDetectorMain.m" />
-      <change beforePath="$PROJECT_DIR$/MultiIrisLinearVariationsDetector/SectoralHeterochromiaDetectorFn.m" afterPath="$PROJECT_DIR$/MultiIrisLinearVariationsDetector/SectoralHeterochromiaDetectorFn.m" />
-      <change beforePath="$PROJECT_DIR$/MultiIrisLinearVariationsDetector/imageDataLoader.m" afterPath="$PROJECT_DIR$/MultiIrisLinearVariationsDetector/imageDataLoader.m" />
-      <change beforePath="$PROJECT_DIR$/MultiIrisLinearVariationsDetector/sectoralRGBMonoCountFinder.m" afterPath="$PROJECT_DIR$/MultiIrisLinearVariationsDetector/sectoralRGBMonoCountFinder.m" />
+      <change beforePath="$PROJECT_DIR$/DecisionMaker/decisionMaker.m" afterPath="$PROJECT_DIR$/DecisionMaker/decisionMaker.m" />
+      <change beforePath="$PROJECT_DIR$/DecisionMaker/imageDataLoaderMain.m" afterPath="$PROJECT_DIR$/DecisionMaker/imageDataLoaderMain.m" />
+      <change beforePath="$PROJECT_DIR$/Verification/ActualSampleGenerator.m" afterPath="$PROJECT_DIR$/Verification/ActualSampleGenerator.m" />
+      <change beforePath="$PROJECT_DIR$/Verification/VerifyDetections.m" afterPath="$PROJECT_DIR$/Verification/VerifyDetections.m" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,71 +16,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-      <file leaf-file-name="HeterochromiaDetectorMain.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MultiIrisLinearVariationsDetector/HeterochromiaDetectorMain.m">
+      <file leaf-file-name="imageDataLoader.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/IrisSectionPropertyDetector/imageDataLoader.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="29">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="11" selection-end-column="109" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="imageDataLoaderMain.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DecisionMaker/imageDataLoaderMain.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="11" column="109" lean-forward="false" selection-start-line="11" selection-start-column="109" selection-end-line="11" selection-end-column="109" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="decisionMaker.m" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DecisionMaker/decisionMaker.m">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SectoralHeterochromiaDetectorFn.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MultiIrisLinearVariationsDetector/SectoralHeterochromiaDetectorFn.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="1" column="48" lean-forward="false" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sectoralRGBMonoCountFinder.m" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MultiIrisLinearVariationsDetector/sectoralRGBMonoCountFinder.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="1" column="45" lean-forward="false" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnisocoriaDetectorFn.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MultiIrisLinearVariationsDetector/AnisocoriaDetectorFn.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="5" selection-end-column="87" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnisocoriaDetectorMain.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MultiIrisLinearVariationsDetector/AnisocoriaDetectorMain.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="42" lean-forward="false" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CentralHeterochromiaDetectorFn.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MultiIrisLinearVariationsDetector/CentralHeterochromiaDetectorFn.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="1" column="94" lean-forward="true" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="94" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpotFinderFn.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/IrisSpotTracker/SpotFinderFn.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="4" selection-end-column="72" />
+              <caret line="0" column="46" lean-forward="false" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -148,6 +105,10 @@
         <option value="$PROJECT_DIR$/MultiIrisLinearVariationsDetector/HeterochromiaDetectorMain.m" />
         <option value="$PROJECT_DIR$/MultiIrisLinearVariationsDetector/SectoralHeterochromiaDetectorFn.m" />
         <option value="$PROJECT_DIR$/MultiIrisLinearVariationsDetector/sectoralRGBMonoCountFinder.m" />
+        <option value="$PROJECT_DIR$/Verification/ActualSampleGenerator.m" />
+        <option value="$PROJECT_DIR$/Verification/VerifyDetections.m" />
+        <option value="$PROJECT_DIR$/DecisionMaker/imageDataLoaderMain.m" />
+        <option value="$PROJECT_DIR$/DecisionMaker/decisionMaker.m" />
       </list>
     </option>
   </component>
@@ -189,17 +150,7 @@
             <path>
               <item name="irisDecoupler" type="b2602c69:ProjectViewProjectNode" />
               <item name="irisDecoupler" type="462c0819:PsiDirectoryNode" />
-              <item name="IrisSpotTracker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="irisDecoupler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="irisDecoupler" type="462c0819:PsiDirectoryNode" />
-              <item name="MultiIrisLinearVariationsDetector" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="irisDecoupler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="irisDecoupler" type="462c0819:PsiDirectoryNode" />
-              <item name="RootFunctions" type="462c0819:PsiDirectoryNode" />
+              <item name="DecisionMaker" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -333,12 +284,12 @@
       <workItem from="1537882977855" duration="1283000" />
       <workItem from="1537965012858" duration="340000" />
       <workItem from="1537966149304" duration="10581000" />
-      <workItem from="1538315002033" duration="9424000" />
+      <workItem from="1538315002033" duration="9921000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21628000" />
+    <option name="totallyTimeSpent" value="22125000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-12" y="-12" width="3224" height="1754" extended-state="6" />
@@ -394,14 +345,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MultiIrisLinearVariationsDetector/HeterochromiaDetectorMain.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/IrisPreprocessor/preprocessorMain.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1334">
@@ -490,14 +433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IrisSectionDivider/imageDataLoader.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="11" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/IrisPreprocessor/blobNoiseReduction.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
@@ -526,14 +461,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RootFunctions/ImageRGBColorAverageFinder.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -630,14 +557,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="5" column="100" lean-forward="false" selection-start-line="5" selection-start-column="100" selection-end-line="5" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IrisSectionPropertyDetector/imageDataLoader.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="11" selection-end-column="109" />
           <folding />
         </state>
       </provider>
@@ -766,6 +685,70 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
           <caret line="1" column="45" lean-forward="false" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RootFunctions/ImageRGBColorAverageFinder.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Verification/ActualSampleGenerator.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="57" lean-forward="false" selection-start-line="0" selection-start-column="57" selection-end-line="0" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Verification/VerifyDetections.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="45" lean-forward="false" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Verification/csvMAker.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IrisSectionDivider/imageDataLoader.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IrisSectionPropertyDetector/imageDataLoader.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="11" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DecisionMaker/imageDataLoaderMain.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="11" column="109" lean-forward="false" selection-start-line="11" selection-start-column="109" selection-end-line="11" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DecisionMaker/decisionMaker.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="46" lean-forward="false" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
           <folding />
         </state>
       </provider>

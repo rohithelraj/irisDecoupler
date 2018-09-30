@@ -1,3 +1,4 @@
+%Code for comparing Detected and actual data.
 clear all;
 ActualData = load('Actual_Data/M970076 (V3).mat');
 ComputedData = load('Data_Outputs/M970076 (V3)withmultipleFlecksNevi.mat');

@@ -1,3 +1,4 @@
+%The main code for deciding on the detections.
 clear all;
 LimbalRing_flag = 0;
 Collarette_flag = 0;

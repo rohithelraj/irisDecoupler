@@ -1,4 +1,4 @@
-
+% Code for generating mat file from pdf for verification.
 Detections = strings(20,1);
 count = 1;
 Detections(count,1) = 'CT at  RS17762363';
